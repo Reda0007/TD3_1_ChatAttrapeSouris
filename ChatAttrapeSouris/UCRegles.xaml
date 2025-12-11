@@ -7,6 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.Background>
+            <ImageBrush ImageSource="/IMAGES/fondfromage.jpg"/>
+        </Grid.Background>
+
+        <TextBlock HorizontalAlignment="Left" Margin="184,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="546" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" FontWeight="Bold"><Run Text="Le joueur contrôle un chat qui doit attraper une souris rapide"/><LineBreak/><Run Text="&#xD;&#xA;"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="184,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="486" FontSize="20" Foreground="Black" FontFamily="Comic Sans MS" FontWeight="Bold"><Run FontFamily="Comic Sans MS" FontSize="20" Text="Le chat dispose d’un temps limité pour réussir"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="184,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="606" FontSize="20" Foreground="Black" FontWeight="Bold"><Run FontFamily="Comic Sans MS" FontSize="20" Text="Le jeu devient plus difficile -&gt; la souris va lus vite en fonction de niveau choisie, des obstacles apparaissent ainsi que des bonus"/></TextBlock>
+        <Image Margin="71,39,460,316" Source="/IMAGES/ReglesBouton.jpg" Stretch="Fill"/>
+
+
     </Grid>
 </UserControl>
