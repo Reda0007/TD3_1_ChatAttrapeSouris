@@ -44,7 +44,9 @@ namespace ChatAttrapeSouris
 
         private void AfficherJouer(object sender, RoutedEventArgs e)
         {
-          
+            UCJeu uc = new UCJeu(); // crée et charge l'écran de 
+            ZoneJeu.Content = uc; // associe l'écran au conteneur 
+            //uc.ButtonJouer.Click += AfficherJouer;
         }
     }
 }
