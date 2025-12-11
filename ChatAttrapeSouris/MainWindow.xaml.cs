@@ -19,6 +19,18 @@ namespace ChatAttrapeSouris
         public MainWindow()
         {
             InitializeComponent();
+            AfficheDemarrage();
+        }
+        private void AfficheDemarrage()
+        {
+            UCDebutDuJeu uc = new UCDebutDuJeu(); // crée et charge l'écran de 
+            ZoneJeu.Content = uc; // associe l'écran au conteneur 
+            uc.ButtonJouer.Click += AfficherJouer; //
+        }
+
+        private void AfficherJouer(object sender, RoutedEventArgs e)
+        {
+          
         }
     }
 }
