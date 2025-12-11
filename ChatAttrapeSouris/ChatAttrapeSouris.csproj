@@ -19,7 +19,6 @@
     <None Remove="IMAGES\fish3.png" />
     <None Remove="IMAGES\JouerBouton.jpg" />
     <None Remove="IMAGES\mouse.png" />
-    <None Remove="IMAGES\ParametresBouton.jpg" />
     <None Remove="IMAGES\ReglesBouton.jpg" />
     <None Remove="IMAGES\stone_edge_beds.png" />
   </ItemGroup>
@@ -35,7 +34,6 @@
     <Resource Include="IMAGES\fish3.png" />
     <Resource Include="IMAGES\JouerBouton.jpg" />
     <Resource Include="IMAGES\mouse.png" />
-    <Resource Include="IMAGES\ParametresBouton.jpg" />
     <Resource Include="IMAGES\ReglesBouton.jpg" />
     <Resource Include="IMAGES\stone_edge_beds.png" />
   </ItemGroup>
