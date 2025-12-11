@@ -23,6 +23,7 @@
     <None Remove="IMAGES\mouse.png" />
     <None Remove="IMAGES\ReglesBouton.jpg" />
     <None Remove="IMAGES\stone_edge_beds.png" />
+    <None Remove="IMAGES\Titre.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +41,7 @@
     <Resource Include="IMAGES\mouse.png" />
     <Resource Include="IMAGES\ReglesBouton.jpg" />
     <Resource Include="IMAGES\stone_edge_beds.png" />
+    <Resource Include="IMAGES\Titre.jpg" />
   </ItemGroup>
 
 </Project>
