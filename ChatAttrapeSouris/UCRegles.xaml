@@ -15,6 +15,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="184,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="486" FontSize="20" Foreground="Black" FontFamily="Comic Sans MS" FontWeight="Bold"><Run FontFamily="Comic Sans MS" FontSize="20" Text="Le chat dispose d’un temps limité pour réussir"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="184,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="606" FontSize="20" Foreground="Black" FontWeight="Bold"><Run FontFamily="Comic Sans MS" FontSize="20" Text="Le jeu devient plus difficile -&gt; la souris va lus vite en fonction de niveau choisie, des obstacles apparaissent ainsi que des bonus"/></TextBlock>
         <Image Margin="71,39,460,316" Source="/IMAGES/ReglesBouton.jpg" Stretch="Fill"/>
+        <Button x:Name="ButtonRetour" Content="Retour" HorizontalAlignment="Left" Margin="582,363,0,0" VerticalAlignment="Top" Height="77" Width="148"/>
 
 
     </Grid>
