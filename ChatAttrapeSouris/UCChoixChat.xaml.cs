@@ -20,9 +20,30 @@ namespace ChatAttrapeSouris
     /// </summary>
     public partial class UCChoixChat : UserControl
     {
+        private int[] CatColorOffsets = { 0, 128, 256, 384 };
+        private int CurrentColorIndex = 32;
+        private const int CatSpriteWidth = 32;
+        private const int CatSpriteHeight = 32;
+        private const int SpriteSheetRow = 128;
         public UCChoixChat()
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UCDebutDuJeu menuPage = new UCDebutDuJeu();
+
+
+            Window mainWindow = Window.GetWindow(this);
+
+
+            if (mainWindow != null)
+            {
+
+                mainWindow.Content = menuPage;
+            }
+        }
+
     }
 }
