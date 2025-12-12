@@ -25,6 +25,14 @@ namespace ChatAttrapeSouris
             InitializeComponent();
         }
 
-       
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.ZoneJeu.Content = null;
+            }
+
+        }
     }
 }

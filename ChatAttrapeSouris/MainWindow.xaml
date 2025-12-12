@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatAttrapeSouris"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="800">
+        Title="MainWindow" Height="450" Width="800">
 
     <Window.Background>
         <ImageBrush ImageSource="/fonds/fondP.jpg"/>
     </Window.Background>
 
     <Canvas>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="CHAT ATTRAPE LA SOURIS" VerticalAlignment="Top" Width="578" Height="60" TextAlignment="Center" FontSize="44" FontFamily="Algerian" FontWeight="Bold" Canvas.Left="111" Canvas.Top="114">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="CHAT ATTRAPE LA SOURIS" VerticalAlignment="Top" Width="578" Height="60" TextAlignment="Center" FontSize="44" FontFamily="Algerian" FontWeight="Bold" Canvas.Left="111" Canvas.Top="96">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF5FB6F9"/>
@@ -20,6 +20,15 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
+        <Button Content="Menu" Canvas.Left="352" Canvas.Top="257" Width="96" Height="30" FontFamily="Algerian" FontSize="20" BorderBrush="#FF80CFF0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4F6269"/>
+                    <GradientStop Color="#FF7E6B0C" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image Height="100" Canvas.Left="287" Source="/fonds/catFond.png" Stretch="Fill" Canvas.Top="217" Width="90" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Grid>
 
             <ContentControl x:Name="ZoneJeu"  Width="800">
@@ -29,14 +38,6 @@
 
             </ContentControl>
         </Grid>
-        <Button Content="Menu" Canvas.Left="352" Canvas.Top="301" Width="95" Height="30" FontFamily="Algerian" FontSize="20" BorderBrush="#FF80CFF0" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF907256"/>
-                    <GradientStop Color="#FF7E6B0C" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Image Height="110" Canvas.Left="276" Source="/fonds/catFond.png" Stretch="Fill" Canvas.Top="221" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
     </Canvas>
 </Window>

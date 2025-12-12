@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="buttonsgaming\ButtonClose.png" />
+    <None Remove="buttonsgaming\ButtonParametres.png" />
+    <None Remove="buttonsgaming\ButtonPause.png" />
     <None Remove="buttonsgaming\buttons.png" />
     <None Remove="buttonsgaming\ButtonStart.png" />
     <None Remove="fonds\background1.jpg" />
@@ -54,6 +57,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="buttonsgaming\ButtonClose.png" />
+    <Resource Include="buttonsgaming\ButtonParametres.png" />
+    <Resource Include="buttonsgaming\ButtonPause.png" />
     <Resource Include="buttonsgaming\buttons.png" />
     <Resource Include="buttonsgaming\ButtonStart.png" />
     <Resource Include="fonds\background1.jpg" />

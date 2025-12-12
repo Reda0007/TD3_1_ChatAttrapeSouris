@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button x:Name="Regles" Content="Regles" HorizontalAlignment="Left" Margin="377,248,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="18" FontFamily="Algerian">
+        <Button x:Name="Regles" Content="Regles" HorizontalAlignment="Left" Margin="534,200,0,0" VerticalAlignment="Top" Width="84" Height="25" FontSize="18" FontFamily="Algerian">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80CFF0"/>
@@ -15,7 +15,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ChoixChat" Content="Chat" HorizontalAlignment="Left" Margin="400,278,0,0" VerticalAlignment="Top" Width="85" Height="25" FontFamily="Algerian" FontSize="18">
+        <Button x:Name="ChoixChat" Content="Chat" HorizontalAlignment="Left" Margin="534,254,0,0" VerticalAlignment="Top" Width="84" Height="25" FontFamily="Algerian" FontSize="18">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF99B38D"/>
@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="Jeu" Content="Jouer" HorizontalAlignment="Left" Margin="400,322,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="18" FontFamily="Algerian">
+        <Button x:Name="Jeu" Content="Jouer" HorizontalAlignment="Left" Margin="534,312,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="18" FontFamily="Algerian">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9A6F47"/>
@@ -31,6 +31,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="400,388,0,0" VerticalAlignment="Top"/>
+        <Button Content="×" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Width="84" Height="68" Background="{x:Null}" FontSize="48" FontFamily="Algerian" BorderBrush="{x:Null}" Click="Button_Click"/>
     </Grid>
 </UserControl>

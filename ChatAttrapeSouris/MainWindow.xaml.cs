@@ -20,29 +20,37 @@ namespace ChatAttrapeSouris
         public MainWindow()
         {
             InitializeComponent();
-            AfficheDebuDuJeu();
+            
         }
-        private void AfficheDebuDuJeu()
+        public void AfficherMenu()
         {
-            UCDebutDuJeu uc = new UCDebutDuJeu(); // crée et charge l'écran de 
-            ZoneJeu.Content = uc; // associe l'écran au conteneur 
-            uc.ButtonJouer.Click += AfficherJouer;
-            uc.ButtonRegles.Click += AfficheRegles;
-            uc.ButtonChoixChat.Click += AfficherChoixChat;
+            ZoneJeu.Content = new UCDebutDuJeu();
         }
+
+        public void AfficherRegles()
+        {
+            ZoneJeu.Content = new UCRegles();
+        }
+
+        public void AfficherJeu()
+        {
+            ZoneJeu.Content = new UCJeu();
+        }
+
+
+
+
+
 
         private void AfficheRegles(object sender, RoutedEventArgs e)
         {
             UCRegles uc = new UCRegles(); // crée et charge l'écran de 
             ZoneJeu.Content = uc; // associe l'écran au conteneur 
-            uc.ButtonRetour.Click += AfficheRetour;
+            //uc.ButtonRetour.Click += AfficheRetour;
            
         }
 
-        private void AfficheRetour(object sender, RoutedEventArgs e)
-        {
-            AfficheDebuDuJeu();
-        }
+        
 
         private void AfficherJouer(object sender, RoutedEventArgs e)
         {
@@ -58,5 +66,16 @@ namespace ChatAttrapeSouris
 
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UCDebutDuJeu uc = new UCDebutDuJeu(); // crée et charge l'écran de 
+            ZoneJeu.Content = uc; // associe l'écran au conteneur 
+            uc.Jeu.Click += AfficherJouer;
+            uc.Regles.Click += AfficheRegles;
+            uc.ChoixChat.Click += AfficherChoixChat;
+        }
+
+        
     }
 }
