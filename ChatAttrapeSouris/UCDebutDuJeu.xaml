@@ -8,18 +8,19 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/IMAGES/imageFondUC.jpg"/>
+            <ImageBrush ImageSource="/IMAGES/fondfromage.jpg"/>
         </Grid.Background>
-        <Button x:Name="ButtonJouer" Content="" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Height="106" Width="330">
+        <Button x:Name="ButtonJouer" Content="" HorizontalAlignment="Left" Margin="552,280,0,0" VerticalAlignment="Top" Height="75" Width="215">
             <Button.Background>
                 <ImageBrush ImageSource="/IMAGES/JouerBouton.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonRegles" Content="" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" Height="116" Width="330">
+        <Button x:Name="ButtonRegles" Content="" HorizontalAlignment="Left" Margin="30,280,0,0" VerticalAlignment="Top" Height="75" Width="215" BorderBrush="Black">
             <Button.Background>
                 <ImageBrush ImageSource="/IMAGES/ReglesBouton.jpg"/>
             </Button.Background>
         </Button>
-        <Image Margin="132,0,132,230" Source="/IMAGES/Titre.jpg" Stretch="Fill"/>
+        <Button x:Name="ButtonChoixChat" Content="CHOIX DU CHAT" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Background="#FFF4D65E" BorderBrush="Black" Width="216" Height="75" FontFamily="Cooper Black" FontSize="24"/>
+        <Image Margin="0,0,0,225" Source="/IMAGES/Titre.jpg" Stretch="Fill"/>
     </Grid>
 </UserControl>

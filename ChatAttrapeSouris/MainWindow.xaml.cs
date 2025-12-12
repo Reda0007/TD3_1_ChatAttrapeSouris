@@ -28,6 +28,7 @@ namespace ChatAttrapeSouris
             ZoneJeu.Content = uc; // associe l'écran au conteneur 
             uc.ButtonJouer.Click += AfficherJouer;
             uc.ButtonRegles.Click += AfficheRegles;
+            uc.ButtonChoixChat.Click += AfficherChoixChat;
         }
 
         private void AfficheRegles(object sender, RoutedEventArgs e)
@@ -48,6 +49,14 @@ namespace ChatAttrapeSouris
             UCJeu uc = new UCJeu(); // crée et charge l'écran de 
             ZoneJeu.Content = uc; // associe l'écran au conteneur 
             //uc.ButtonJouer.Click += AfficherJouer;
+        }
+
+        private void AfficherChoixChat(object sender, RoutedEventArgs e)
+        {
+            UCChoixChat uc = new UCChoixChat(); 
+            ZoneJeu.Content = uc;
+
+
         }
     }
 }
