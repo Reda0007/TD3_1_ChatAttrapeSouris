@@ -8,8 +8,29 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/IMAGES/fondfromage.jpg"/>
+            <ImageBrush ImageSource="/images/fondfromage.jpg"/>
         </Grid.Background>
+        <Label Content="Choix du chat" HorizontalAlignment="Left" Margin="62,43,0,0" VerticalAlignment="Top" Background="#FFF6D85E" FontSize="36" FontFamily="Cooper Black"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="659,350,0,0" VerticalAlignment="Top" Background="#FFEBB838" BorderBrush="Black" FontSize="36" FontFamily="Cooper Black" Click="Button_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="340" Width="294" Margin="0,94,0,0">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0">
+
+                <Button Content="&lt;" Width="50" Height="50" Margin="0,0,20,0" 
+                    Click="LeftButton_Click" BorderBrush="Black" Background="#FFEEB739" FontSize="18" FontFamily="Cooper Black"/>
+                <Image x:Name="CatImage" 
+                   Width="125" Height="124" 
+                   Stretch="UniformToFill" 
+                   RenderTransformOrigin="0.505,1.121"/>
+
+                <Button Content=">" Width="50" Height="50" Margin="20,0,0,0" 
+                    Click="RightButton_Click" FontFamily="Cooper Black" FontSize="18" Background="#FFEEB739" BorderBrush="Black"/>
+
+            </StackPanel>
+            <Button Content="Ok" Margin="0,50,0,0" Background="#FFEDB838" BorderBrush="Black" FontFamily="Cooper Black" FontSize="16"/>
+
+
+        </StackPanel>
 
     </Grid>
 </UserControl>
