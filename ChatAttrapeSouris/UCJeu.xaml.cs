@@ -39,7 +39,14 @@ namespace ChatAttrapeSouris
 
         private void Jeu(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
+        }
+
+        private void menuParametre_Click(object sender, RoutedEventArgs e)
+        {
+            minuterie.Stop();
+            ParametresVitesse parametresvitesse = new ParametresVitesse();
+
         }
     }
 }

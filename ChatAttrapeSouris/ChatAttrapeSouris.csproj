@@ -24,6 +24,18 @@
     <None Remove="IMAGES\ReglesBouton.jpg" />
     <None Remove="IMAGES\stone_edge_beds.png" />
     <None Remove="IMAGES\Titre.jpg" />
+    <None Remove="Image_chat\chat_bas.png" />
+    <None Remove="Image_chat\chat_bas_jaune.png" />
+    <None Remove="Image_chat\chat_droite.png" />
+    <None Remove="Image_chat\chat_gauche.png" />
+    <None Remove="Image_chat\chat_haut.png" />
+    <None Remove="Image_chat\chat_jaune_droite.png" />
+    <None Remove="Image_chat\chat_jaune_gauche.png" />
+    <None Remove="Image_chat\chat_jaune_haut.png" />
+    <None Remove="Image_chat\chat_noir_bas.png" />
+    <None Remove="Image_chat\chat_noir_droite.png" />
+    <None Remove="Image_chat\chat_noir_gauche.png" />
+    <None Remove="Image_chat\chat_noir_haut.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +54,18 @@
     <Resource Include="IMAGES\ReglesBouton.jpg" />
     <Resource Include="IMAGES\stone_edge_beds.png" />
     <Resource Include="IMAGES\Titre.jpg" />
+    <Resource Include="Image_chat\chat_bas.png" />
+    <Resource Include="Image_chat\chat_bas_jaune.png" />
+    <Resource Include="Image_chat\chat_droite.png" />
+    <Resource Include="Image_chat\chat_gauche.png" />
+    <Resource Include="Image_chat\chat_haut.png" />
+    <Resource Include="Image_chat\chat_jaune_droite.png" />
+    <Resource Include="Image_chat\chat_jaune_gauche.png" />
+    <Resource Include="Image_chat\chat_jaune_haut.png" />
+    <Resource Include="Image_chat\chat_noir_bas.png" />
+    <Resource Include="Image_chat\chat_noir_droite.png" />
+    <Resource Include="Image_chat\chat_noir_gauche.png" />
+    <Resource Include="Image_chat\chat_noir_haut.png" />
   </ItemGroup>
 
 </Project>

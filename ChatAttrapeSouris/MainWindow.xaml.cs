@@ -16,6 +16,7 @@ namespace ChatAttrapeSouris
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static double vitesse;
         public MainWindow()
         {
             InitializeComponent();
