@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Canvas>
+        <Menu Height="20" Width="800" Grid.Row="0">
+            <MenuItem x:Name="menuParametre" Header="_Parametre" Click="MenuItem_Click"/>
+        </Menu>
         <Canvas.Background>
             <ImageBrush ImageSource="/IMAGES/Background_1.png"/>
         </Canvas.Background>
