@@ -48,5 +48,12 @@ namespace ChatAttrapeSouris
             ParametresVitesse parametresvitesse = new ParametresVitesse();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UCPause pauseOverlay = new UCPause();
+
+            MainGrid.Children.Add(pauseOverlay);
+        }
     }
 }
