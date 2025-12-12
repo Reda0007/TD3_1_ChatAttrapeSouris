@@ -27,7 +27,7 @@
                     Click="RightButton_Click" FontFamily="Cooper Black" FontSize="18" Background="#FFEEB739" BorderBrush="Black"/>
 
             </StackPanel>
-            <Button Content="Ok" Margin="0,50,0,0" Background="#FFEDB838" BorderBrush="Black" FontFamily="Cooper Black" FontSize="16"/>
+            <Button Content="Ok" Margin="0,50,0,0" Background="#FFEDB838" BorderBrush="Black" FontFamily="Cooper Black" FontSize="16" Click="Button_Click_1"/>
 
 
         </StackPanel>
