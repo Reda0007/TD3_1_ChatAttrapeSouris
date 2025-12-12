@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="fonds\fond1.png" />
+    <None Remove="fonds\fond2.png" />
+    <None Remove="fonds\fond3.png" />
+    <None Remove="fonds\fond4.png" />
+    <None Remove="fonds\fond5.png" />
+    <None Remove="fonds\fond6.png" />
     <None Remove="IMAGES\Apartment.png" />
     <None Remove="IMAGES\Background_1.png" />
     <None Remove="IMAGES\box.png" />
@@ -39,6 +45,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="fonds\fond1.png" />
+    <Resource Include="fonds\fond2.png" />
+    <Resource Include="fonds\fond3.png" />
+    <Resource Include="fonds\fond4.png" />
+    <Resource Include="fonds\fond5.png" />
+    <Resource Include="fonds\fond6.png" />
     <Resource Include="IMAGES\Apartment.png" />
     <Resource Include="IMAGES\Background_1.png" />
     <Resource Include="IMAGES\box.png" />
