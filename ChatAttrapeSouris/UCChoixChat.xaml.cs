@@ -25,7 +25,7 @@ namespace ChatAttrapeSouris
         private const int LagreurChat = 32;
         private const int HauteurChat = 32;
         private const int Ligne = 128;
-        public static int ChatChoisie { get; set; } = 0;
+        
 
         public UCChoixChat()
         {
@@ -68,8 +68,8 @@ namespace ChatAttrapeSouris
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ChatChoisie = CouleurActuelle; 
-            MessageBox.Show("Vous avez choisi le chat numéro " + ChatChoisie);
+            Data.CouleurChatChoisie = CouleurActuelle; 
+            MessageBox.Show("Vous avez choisi le chat numéro " + Data.CouleurChatChoisie);
         }
     }
 }
