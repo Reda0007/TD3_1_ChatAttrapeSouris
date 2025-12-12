@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="buttonsgaming\buttons.png" />
+    <None Remove="buttonsgaming\ButtonStart.png" />
     <None Remove="fonds\background1.jpg" />
     <None Remove="fonds\background2.jpg" />
     <None Remove="fonds\background3.jpg" />
@@ -52,6 +54,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="buttonsgaming\buttons.png" />
+    <Resource Include="buttonsgaming\ButtonStart.png" />
     <Resource Include="fonds\background1.jpg" />
     <Resource Include="fonds\background2.jpg" />
     <Resource Include="fonds\background3.jpg" />
