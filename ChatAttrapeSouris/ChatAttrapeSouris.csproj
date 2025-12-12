@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="fonds\background1.jpg" />
+    <None Remove="fonds\background2.jpg" />
+    <None Remove="fonds\background3.jpg" />
     <None Remove="fonds\fond1.png" />
     <None Remove="fonds\fond2.png" />
     <None Remove="fonds\fond3.png" />
@@ -45,6 +48,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="fonds\background1.jpg" />
+    <Resource Include="fonds\background2.jpg" />
+    <Resource Include="fonds\background3.jpg" />
     <Resource Include="fonds\fond1.png" />
     <Resource Include="fonds\fond2.png" />
     <Resource Include="fonds\fond3.png" />
