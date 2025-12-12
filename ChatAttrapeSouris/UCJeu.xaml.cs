@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ChatAttrapeSouris
 {
@@ -20,9 +21,25 @@ namespace ChatAttrapeSouris
     /// </summary>
     public partial class UCJeu : UserControl
     {
+        private static DispatcherTimer minuterie;
         public UCJeu()
         {
             InitializeComponent();
+            InitTimer();
+        }
+
+        private void InitTimer()
+        {
+            minuterie = new DispatcherTimer();
+            minuterie.Interval = TimeSpan.FromMilliseconds(16);
+            // associe l’appel de la méthode Jeu à la fin de la minuterie
+            minuterie.Tick += Jeu;
+            minuterie.Start();
+        }
+
+        private void Jeu(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
