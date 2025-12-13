@@ -32,56 +32,58 @@ namespace ChatAttrapeSouris
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UCDebutDuJeu menuPage = new UCDebutDuJeu();
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    UCDebutDuJeu menuPage = new UCDebutDuJeu();
 
 
-            Window mainWindow = Window.GetWindow(this);
+        //    Window mainWindow = Window.GetWindow(this);
 
 
-            if (mainWindow != null)
-            {
+        //    if (mainWindow != null)
+        //    {
 
-                mainWindow.Content = menuPage;
-            }
-        }
-        private void ImporterImageChat()
-        {
-            BitmapImage spriteSheet = new BitmapImage(new Uri("pack://application:,,,/Images/cat.png")); // Charger la feuille de sprite
-            Int32Rect sourceRect = new Int32Rect(DecalagesCouleurChat[CouleurActuelle], Ligne, LagreurChat, HauteurChat); // Définir la région à découper
-            CroppedBitmap croppedBitmap = new CroppedBitmap(spriteSheet, sourceRect); // Créer le bitmap découpé
-            ImageChat.Source = croppedBitmap; // Assigner l'image découpée à l'élément Image
-        }
+        //        mainWindow.Content = menuPage;
+        //    }
+        //}
+        //private void ImporterImageChat()
+        //{
+        //    BitmapImage spriteSheet = new BitmapImage(new Uri("pack://application:,,,/Images/cat.png")); // Charger la feuille de sprite
+        //    Int32Rect sourceRect = new Int32Rect(DecalagesCouleurChat[CouleurActuelle], Ligne, LagreurChat, HauteurChat); // Définir la région à découper
+        //    CroppedBitmap croppedBitmap = new CroppedBitmap(spriteSheet, sourceRect); // Créer le bitmap découpé
+        //    ImageChat.Source = croppedBitmap; // Assigner l'image découpée à l'élément Image
+        //}
 
-        private void RightButton_Click(object sender, RoutedEventArgs e)
-        {
-            CouleurActuelle=(CouleurActuelle + 1) % DecalagesCouleurChat.Length; 
-            ImporterImageChat();
-        }
+        //private void RightButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CouleurActuelle=(CouleurActuelle + 1) % DecalagesCouleurChat.Length; 
+        //    ImporterImageChat();
+        //}
 
-        private void LeftButton_Click(object sender, RoutedEventArgs e)
-        {
-            CouleurActuelle = (CouleurActuelle - 1 + DecalagesCouleurChat.Length) % DecalagesCouleurChat.Length; 
-            ImporterImageChat();
-        }
+        //private void LeftButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CouleurActuelle = (CouleurActuelle - 1 + DecalagesCouleurChat.Length) % DecalagesCouleurChat.Length; 
+        //    ImporterImageChat();
+        //}
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Data.CouleurChatChoisie = CouleurActuelle; 
-            MessageBox.Show("Vous avez choisi le chat numéro " + Data.CouleurChatChoisie);
-        }
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    Data.CouleurChatChoisie = CouleurActuelle; 
+        //    MessageBox.Show("Vous avez choisi le chat numéro " + Data.CouleurChatChoisie);
+        //}
 
        
 
         private void RBChatBlanc_Click(object sender, RoutedEventArgs e)
         {
-
+            butJouer.IsEnabled = true;
+            MainWindow.Perso = "ChatBlanc";
         }
 
         private void RBChatJaune_Click(object sender, RoutedEventArgs e)
         {
-
+            butJouer.IsEnabled = true;
+            MainWindow.Perso = "ChatJaune";
         }
     }
 }

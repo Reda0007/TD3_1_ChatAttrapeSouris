@@ -23,10 +23,6 @@
             </Button.Background>
         </Button>
         <Image Height="100" Canvas.Left="287" Source="/fonds/catFond.png" Stretch="Fill" Canvas.Top="217" Width="90" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Grid>
-
-            
-        </Grid>
-
+        
     </Canvas>
 </UserControl>
