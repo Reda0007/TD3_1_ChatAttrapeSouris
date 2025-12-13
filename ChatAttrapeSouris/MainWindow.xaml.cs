@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Security.Policy;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,13 +21,23 @@ namespace ChatAttrapeSouris
         public MainWindow()
         {
             InitializeComponent();
-            AfficheDebuDuJeu();
-            
+            AfficheMenu();
+    
         }
 
-        private void AfficheDebuDuJeu()
+
+        private void AfficheMenu()
         {
-           UCDebutDuJeu uc = new UCDebutDuJeu();
+            UCMenu uc = new UCMenu();
+            ZoneJeu.Content = uc;
+            uc.ButtonMenu.Click += AfficheDebutDuJeu;
+
+
+        }
+
+        private void AfficheDebutDuJeu(object sender, RoutedEventArgs e)
+        {
+            UCDebutDuJeu uc = new UCDebutDuJeu();
             ZoneJeu.Content = uc;
             uc.ButtonRegles.Click += AfficheRegles;
             uc.ButtonJeu.Click += AfficheJeu;
@@ -34,9 +45,7 @@ namespace ChatAttrapeSouris
 
         private void AfficheJeu(object sender, RoutedEventArgs e)
         {
-            UCChoixChat uc = new UCChoixChat();
-            ZoneJeu.Content = uc;
-            
+           
         }
 
         private void AfficheRegles(object sender, RoutedEventArgs e)
@@ -48,17 +57,7 @@ namespace ChatAttrapeSouris
 
         private void AfficheRetour(object sender, RoutedEventArgs e)
         {
-            AfficheDebuDuJeu();
+            AfficheMenu();
         }
-
-        private void AfficheMenu()
-        {
-          // UCMenu uc = new UCMenu();
-          // il faut mettre ici le uc menu pour pouvoir acceder au autre bouton
-        }
-
-        
-
-        
     }
 }
