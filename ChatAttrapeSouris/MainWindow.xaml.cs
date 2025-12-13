@@ -20,13 +20,41 @@ namespace ChatAttrapeSouris
         public MainWindow()
         {
             InitializeComponent();
-            AfficheMenu();
+            AfficheDebuDuJeu();
             
+        }
+
+        private void AfficheDebuDuJeu()
+        {
+           UCDebutDuJeu uc = new UCDebutDuJeu();
+            ZoneJeu.Content = uc;
+            uc.ButtonRegles.Click += AfficheRegles;
+            uc.ButtonJeu.Click += AfficheJeu;
+        }
+
+        private void AfficheJeu(object sender, RoutedEventArgs e)
+        {
+            UCChoixChat uc = new UCChoixChat();
+            ZoneJeu.Content = uc;
+            
+        }
+
+        private void AfficheRegles(object sender, RoutedEventArgs e)
+        {
+            UCRegles uc = new UCRegles();
+            ZoneJeu.Content = uc;
+            uc.ButtonRetour.Click += AfficheRetour;
+        }
+
+        private void AfficheRetour(object sender, RoutedEventArgs e)
+        {
+            AfficheDebuDuJeu();
         }
 
         private void AfficheMenu()
         {
-            
+          // UCMenu uc = new UCMenu();
+          // il faut mettre ici le uc menu pour pouvoir acceder au autre bouton
         }
 
         
