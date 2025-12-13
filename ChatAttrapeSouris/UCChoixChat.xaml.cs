@@ -71,5 +71,10 @@ namespace ChatAttrapeSouris
             Data.CouleurChatChoisie = CouleurActuelle; 
             MessageBox.Show("Vous avez choisi le chat numéro " + Data.CouleurChatChoisie);
         }
+
+        private void rbTraineau_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
