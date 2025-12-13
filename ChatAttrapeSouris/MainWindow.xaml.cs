@@ -41,8 +41,14 @@ namespace ChatAttrapeSouris
             UCDebutDuJeu uc = new UCDebutDuJeu();
             ZoneJeu.Content = uc;
             uc.ButtonRegles.Click += AfficheRegles;
-            //uc.ButtonJeu.Click += AfficheJeu;
+            uc.ButtonJeu.Click += AfficheParametres;
             uc.ButtonChoixChat.Click += AfficheChoixChat;
+
+        }
+
+        private void AfficheParametres(object sender, RoutedEventArgs e)
+        {
+           
         }
 
         private void AfficheChoixChat(object sender, RoutedEventArgs e)
