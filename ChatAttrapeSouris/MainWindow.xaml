@@ -11,32 +11,5 @@
         <ImageBrush ImageSource="/fonds/fondP.jpg"/>
     </Window.Background>
 
-    <Canvas>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="578" Height="60" TextAlignment="Center" FontSize="44" FontFamily="Algerian" FontWeight="Bold" Canvas.Left="111" Canvas.Top="96">
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5FB6F9"/>
-                    <GradientStop Color="#FFA5E6E8" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Background><Run Language="fr-fr" Text="INFINITE RUNNER"/></TextBlock>
-        <Button Content="Menu" Canvas.Left="352" Canvas.Top="257" Width="96" Height="30" FontFamily="Algerian" FontSize="20" BorderBrush="#FF80CFF0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF4F6269"/>
-                    <GradientStop Color="#FF7E6B0C" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Image Height="100" Canvas.Left="287" Source="/fonds/catFond.png" Stretch="Fill" Canvas.Top="217" Width="90" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Grid>
-
-            <ContentControl x:Name="ZoneJeu"  Width="800">
-                <ContentControl.Background>
-                    <ImageBrush/>
-                </ContentControl.Background>
-
-            </ContentControl>
-        </Grid>
-
-    </Canvas>
+   
 </Window>
