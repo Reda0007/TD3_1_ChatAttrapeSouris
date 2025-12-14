@@ -28,6 +28,11 @@ namespace ChatAttrapeSouris
             //InitTimer();
         }
 
+        private void menuParametre_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void InitTimer()
         //{
         //    minuterie = new DispatcherTimer();
@@ -39,7 +44,7 @@ namespace ChatAttrapeSouris
 
         //private void Jeu(object? sender, EventArgs e)
         //{
-            
+
         //}
 
         //private void menuParametre_Click(object sender, RoutedEventArgs e)
