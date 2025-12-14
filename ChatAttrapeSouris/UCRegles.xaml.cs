@@ -25,16 +25,8 @@ namespace ChatAttrapeSouris
             InitializeComponent();
         }
 
-        private void ButtonRetour_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
-
-            if (mainWindow != null)
-            {
-                mainWindow.AfficherMenu();
-            }
-
-        }
+       
+        
     }
 }
 
