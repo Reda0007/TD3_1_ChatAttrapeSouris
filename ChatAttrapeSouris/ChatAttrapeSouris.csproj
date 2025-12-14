@@ -14,6 +14,12 @@
     <None Remove="buttonsgaming\ButtonPause.png" />
     <None Remove="buttonsgaming\buttons.png" />
     <None Remove="buttonsgaming\ButtonStart.png" />
+    <None Remove="cats\cat_01.png" />
+    <None Remove="cats\cat_02.png" />
+    <None Remove="cats\cat_03.png" />
+    <None Remove="cats\cat_04.png" />
+    <None Remove="cats\cat_05.png" />
+    <None Remove="cats\cat_06.png" />
     <None Remove="fonds\background1.jpg" />
     <None Remove="fonds\background2.jpg" />
     <None Remove="fonds\background3.jpg" />
@@ -59,6 +65,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="cats\cat_01.png" />
+    <Resource Include="cats\cat_02.png" />
+    <Resource Include="cats\cat_03.png" />
+    <Resource Include="cats\cat_04.png" />
+    <Resource Include="cats\cat_05.png" />
+    <Resource Include="cats\cat_06.png" />
     <Resource Include="IMAGES\chat_blanc_choix.png" />
     <Resource Include="IMAGES\chat_jaune_choix.png" />
   </ItemGroup>
