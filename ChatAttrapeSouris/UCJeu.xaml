@@ -10,7 +10,7 @@
         <Menu Height="20" Width="800" Grid.Row="0">
             <MenuItem x:Name="menuParametre" Header="_Parametre" Click="menuParametre_Click"/>
         </Menu>
-        <Button Content="" Canvas.Left="715" Canvas.Top="-1" Width="85" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click">
+        <Button Content="" Canvas.Left="715" Canvas.Top="-1" Width="85" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" >
             <Button.Background>
                 <ImageBrush ImageSource="/IMAGES/pause-button.jpg"/>
             </Button.Background>

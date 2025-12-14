@@ -14,10 +14,11 @@ namespace ChatAttrapeSouris
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary>::
     public partial class MainWindow : Window
     {
         public static double vitesse;
+        public static string Perso { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -40,11 +41,27 @@ namespace ChatAttrapeSouris
             UCDebutDuJeu uc = new UCDebutDuJeu();
             ZoneJeu.Content = uc;
             uc.ButtonRegles.Click += AfficheRegles;
-            uc.ButtonJeu.Click += AfficheJeu;
+            uc.ButtonJeu.Click += AfficheParametres;
+            uc.ButtonChoixChat.Click += AfficheChoixChat;
+
+        }
+
+        private void AfficheParametres(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void AfficheChoixChat(object sender, RoutedEventArgs e)
+        {
+            UCChoixChat uc = new UCChoixChat();
+            ZoneJeu.Content = uc;
+            uc.butJouer.Click += AfficheJeu;
         }
 
         private void AfficheJeu(object sender, RoutedEventArgs e)
         {
+           UCJeu uc = new UCJeu();
+           ZoneJeu.Content = uc;
            
         }
 

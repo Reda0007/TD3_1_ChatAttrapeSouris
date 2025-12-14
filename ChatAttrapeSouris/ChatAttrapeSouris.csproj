@@ -32,6 +32,8 @@
     <None Remove="IMAGES\box.png" />
     <None Remove="IMAGES\bricked_bushes.png" />
     <None Remove="IMAGES\cat.png" />
+    <None Remove="IMAGES\chat_blanc_choix.png" />
+    <None Remove="IMAGES\chat_jaune_choix.png" />
     <None Remove="IMAGES\fish1.png" />
     <None Remove="IMAGES\fish2.png" />
     <None Remove="IMAGES\fish3.png" />
@@ -54,6 +56,11 @@
     <None Remove="Image_chat\chat_noir_droite.png" />
     <None Remove="Image_chat\chat_noir_gauche.png" />
     <None Remove="Image_chat\chat_noir_haut.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="IMAGES\chat_blanc_choix.png" />
+    <Resource Include="IMAGES\chat_jaune_choix.png" />
   </ItemGroup>
 
   <ItemGroup>

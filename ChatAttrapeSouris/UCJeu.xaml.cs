@@ -25,35 +25,41 @@ namespace ChatAttrapeSouris
         public UCJeu()
         {
             InitializeComponent();
-            InitTimer();
-        }
-
-        private void InitTimer()
-        {
-            minuterie = new DispatcherTimer();
-            minuterie.Interval = TimeSpan.FromMilliseconds(16);
-            // associe l’appel de la méthode Jeu à la fin de la minuterie
-            minuterie.Tick += Jeu;
-            minuterie.Start();
-        }
-
-        private void Jeu(object? sender, EventArgs e)
-        {
-            
+            //InitTimer();
         }
 
         private void menuParametre_Click(object sender, RoutedEventArgs e)
         {
-            minuterie.Stop();
-            ParametresVitesse parametresvitesse = new ParametresVitesse();
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UCPause pauseOverlay = new UCPause();
+        //private void InitTimer()
+        //{
+        //    minuterie = new DispatcherTimer();
+        //    minuterie.Interval = TimeSpan.FromMilliseconds(16);
+        //    // associe l’appel de la méthode Jeu à la fin de la minuterie
+        //    minuterie.Tick += Jeu;
+        //    minuterie.Start();
+        //}
 
-            MainGrid.Children.Add(pauseOverlay);
-        }
+        //private void Jeu(object? sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void menuParametre_Click(object sender, RoutedEventArgs e)
+        //{
+        //    minuterie.Stop();
+        //    ParametresVitesse parametresvitesse = new ParametresVitesse();
+
+        //}
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    UCPause pauseOverlay = new UCPause();
+
+        //    MainGrid.Children.Add(pauseOverlay);
+        //
+        //}
     }
 }

@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonJeu" Content="Jouer" HorizontalAlignment="Left" Margin="534,312,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="18" FontFamily="Algerian">
+        <Button x:Name="ButtonJeu" Content="Paramètres" HorizontalAlignment="Left" Margin="534,312,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="18" FontFamily="Algerian">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9A6F47"/>
@@ -31,6 +31,5 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="×" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Width="84" Height="68" Background="{x:Null}" FontSize="48" FontFamily="Algerian" BorderBrush="{x:Null}" Click="Button_Click"/>
     </Grid>
 </UserControl>
