@@ -19,11 +19,13 @@ namespace ChatAttrapeSouris
     {
         public static double vitesse;
         public static string Perso { get; set; }
+        public static BitmapImage[] persos = new BitmapImage[3];
         public MainWindow()
         {
             InitializeComponent();
             AfficheMenu();
-    
+            InitializeImages();
+
         }
 
 
@@ -75,6 +77,12 @@ namespace ChatAttrapeSouris
         private void AfficheRetour(object sender, RoutedEventArgs e)
         {
             AfficheMenu();
+        }
+
+        private void InitializeImages()
+        {
+            for (int i = 0; i < persos.Length; i++)
+                persos[i] = new BitmapImage(new Uri($"pack://application:,,,/cat/cat_0{i + 1}.gif"));
         }
     }
 }
