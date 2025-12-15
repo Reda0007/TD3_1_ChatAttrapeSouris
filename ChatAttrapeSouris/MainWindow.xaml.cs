@@ -18,7 +18,9 @@ namespace ChatAttrapeSouris
     public partial class MainWindow : Window
     {
         public static double vitesse;
+        public static double son;
         public static string Perso { get; set; }
+
        
 
 
@@ -44,28 +46,11 @@ namespace ChatAttrapeSouris
             UCDebutDuJeu uc = new UCDebutDuJeu();
             ZoneJeu.Content = uc;
             uc.ButtonRegles.Click += AfficheRegles;
-            uc.ButtonParametres.Click += AfficheParametres;
+            //uc.ButtonParametres.Click += AfficheParametres;
             uc.ButtonChoixChat.Click += AfficheChoixChat;
 
         }
 
-        private void AfficheParametres(object sender, RoutedEventArgs e)
-        {
-            UCParametres uc = new UCParametres();
-            ZoneJeu.Content = uc;
-            uc.buttonson.Click += AfficheSon;
-            uc.buttonvitesse.Click += AfficheVitesse;
-        }
-
-        private void AfficheVitesse(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void AfficheSon(object sender, RoutedEventArgs e)
-        {
-          
-        }
 
         private void AfficheChoixChat(object sender, RoutedEventArgs e)
         {
@@ -79,7 +64,7 @@ namespace ChatAttrapeSouris
             UCJeu uc = new UCJeu();
             ZoneJeu.Content = uc;
             uc.ButtonPause.Click += AffichePause;
-            uc.menuParametre.Click += AfficheParametres;
+            //uc.menuParametre.Click += AfficheParametres;
 
         }
 
