@@ -30,7 +30,7 @@ namespace ChatAttrapeSouris
         private bool saut = false;
         private bool enSaut = false;
         private double vitesseSaut = 0;
-        private double gravite = 1;
+        private double gravite = 0.5;
         private double positionSolY; // Position Y du sol
 
 
@@ -45,6 +45,7 @@ namespace ChatAttrapeSouris
             InitializeComponent();
             InitializeImages();
             InitializeTimer();
+            BoxPosition();
 
             // Sauvegarder la position initiale au sol
             positionSolY = Canvas.GetBottom(imgPerso);
@@ -58,14 +59,7 @@ namespace ChatAttrapeSouris
 
         }
 
-        public void GererKeyDown(KeyEventArgs e)
-        {
-            if (e.Key == Key.Space && !enSaut)
-            {
-                enSaut = true;
-                vitesseSaut = 15;
-            }
-        }
+        
 
         public void GererKeyUp(KeyEventArgs e)
         {
@@ -170,16 +164,20 @@ namespace ChatAttrapeSouris
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.KeyDown += MainGrid_KeyDown;
+            Application.Current.MainWindow.KeyDown += MainGrid_KeyDown; // Associer l'événement KeyDown
         }
 
         private void MainGrid_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Space)
+
+            if (e.Key == Key.Space && !enSaut)
             {
-                Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 15);
+                enSaut = true;
+                vitesseSaut = 25;
             }
         }
+
+        
 
 
 
