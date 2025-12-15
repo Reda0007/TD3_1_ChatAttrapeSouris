@@ -18,8 +18,8 @@
                 </LinearGradientBrush>
             </Label.Background>
         </Label>
-        <Button x:Name="Exit" Content="Quitter" HorizontalAlignment="Left" Margin="109,145,0,0" VerticalAlignment="Top" Background="#FFD7A835" BorderBrush="Black" FontSize="18" FontFamily="Algerian" Width="85" Height="25" Click="Exit_Click" FontWeight="Bold"/>
-        <Button x:Name="Annul" Content="Annuler" HorizontalAlignment="Left" Margin="244,145,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Algerian" Background="#FFD7A835" BorderBrush="Black" Width="85" Height="25" Click="Annul_Click" FontWeight="Bold"/>
+        <Button x:Name="Exit" Content="Quitter" HorizontalAlignment="Left" Margin="109,145,0,0" VerticalAlignment="Top" Background="#FFD7A835" BorderBrush="Black" FontSize="18" FontFamily="Algerian" Width="85" Height="25" FontWeight="Bold" Click="Exit_Click"/>
+        <Button x:Name="Annul" Content="Annuler" HorizontalAlignment="Left" Margin="244,145,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Algerian" Background="#FFD7A835" BorderBrush="Black" Width="85" Height="25" FontWeight="Bold" Click="Annul_Click"/>
 
     </Grid>
 </Window>
