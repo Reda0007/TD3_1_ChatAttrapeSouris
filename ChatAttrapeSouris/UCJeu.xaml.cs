@@ -210,7 +210,7 @@ namespace ChatAttrapeSouris
             if (e.Key == Key.Space && !enSaut)
             {
                 enSaut = true;
-                vitesseSaut = 25;
+                vitesseSaut = 20;
             }
         }
 
