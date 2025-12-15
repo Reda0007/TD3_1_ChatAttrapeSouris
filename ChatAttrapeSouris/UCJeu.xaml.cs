@@ -102,8 +102,9 @@ namespace ChatAttrapeSouris
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
         {
-            UCPause uc = new UCPause();
-            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+            minuterie.Stop();
+            UCPause parametreWindow = new UCPause();
+            bool? rep = parametreWindow.ShowDialog();
         }
 
         //private void InitTimer()
