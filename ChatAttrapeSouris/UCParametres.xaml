@@ -7,18 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="400">
     <Grid>
-        <Slider x:Name="slidVitesse" Width="120" Minimum="1"
-         Maximum="3"
-         Value="2"
-         TickFrequency="1"
-         IsSnapToTickEnabled="True"
-         TickPlacement="BottomRight"
-         AutoToolTipPlacement="BottomRight"
-         HorizontalAlignment="Center" Margin="0,125,0,-125"/>          
+        <Button x:Name="buttonson" Content="Son" HorizontalAlignment="Center" Margin="200,150,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonvitesse" Content="Vitesse" HorizontalAlignment="Center" Margin="200,68,0,0" VerticalAlignment="Top"/>
 
-        <Button x:Name="button_ok" Content="Ok" HorizontalAlignment="Left" Margin="105,177,0,0" VerticalAlignment="Top" Width="43" Click="button_ok_Click"/>
-        <Button x:Name="button_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="258,177,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.593,0.04" Click="button_annuler_Click"/>
-        <Label x:Name="label_vitesse" Content="Vitesse" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.738,0.601"/>
 
 
     </Grid>
