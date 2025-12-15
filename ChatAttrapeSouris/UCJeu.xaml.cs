@@ -93,6 +93,18 @@ namespace ChatAttrapeSouris
                 saut = false;
         }
 
+        private void menuParametre_Click(object sender, RoutedEventArgs e)
+        {
+            UCParametres uc = new UCParametres();
+            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+        }
+
+        private void ButtonPause_Click(object sender, RoutedEventArgs e)
+        {
+            UCPause uc = new UCPause();
+            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+        }
+
         //private void InitTimer()
         //{
         //    minuterie = new DispatcherTimer();
