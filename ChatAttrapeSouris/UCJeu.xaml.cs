@@ -29,6 +29,9 @@ namespace ChatAttrapeSouris
         private double vitesseSaut = 0;
         private double gravite = 0.5;
         private double positionSolY; // Position Y du sol
+        private double FORCE_SAUT;
+        private double GRAVITE;
+
 
         public UCJeu()
         {
@@ -48,7 +51,10 @@ namespace ChatAttrapeSouris
             InitializeTimer();
         }
 
-        
+        private void BoxPosition()
+        {
+            throw new NotImplementedException();
+        }
 
         public void GererKeyUp(KeyEventArgs e)
         {
@@ -214,7 +220,7 @@ namespace ChatAttrapeSouris
             }
         }
 
-        
+
 
 
 
@@ -223,21 +229,22 @@ namespace ChatAttrapeSouris
         //private void Jeu(object? sender, EventArgs e)
         //{
 
-    //}
+        //}
 
-    //private void menuParametre_Click(object sender, RoutedEventArgs e)
-    //{
-    //    minuterie.Stop();
-    //    ParametresVitesse parametresvitesse = new ParametresVitesse();
+        //private void menuParametre_Click(object sender, RoutedEventArgs e)
+        //{
+        //    minuterie.Stop();
+        //    ParametresVitesse parametresvitesse = new ParametresVitesse();
 
-    //}
+        //}
 
-    //private void Button_Click(object sender, RoutedEventArgs e)
-    //{
-    //    UCPause pauseOverlay = new UCPause();
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    UCPause pauseOverlay = new UCPause();
 
-    //    MainGrid.Children.Add(pauseOverlay);
-    //
-    //}
+        //    MainGrid.Children.Add(pauseOverlay);
+        //
+        //}
+    }
 }
 

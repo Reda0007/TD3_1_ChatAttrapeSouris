@@ -20,9 +20,6 @@
     <None Remove="cats\cat_04.png" />
     <None Remove="cats\cat_05.png" />
     <None Remove="cats\cat_06.png" />
-    <None Remove="cats\сat_07.png" />
-    <None Remove="cats\сat_08.png" />
-    <None Remove="cats\сat_09.png" />
     <None Remove="fonds\background1.jpg" />
     <None Remove="fonds\background2.jpg" />
     <None Remove="fonds\background3.jpg" />
@@ -52,9 +49,9 @@
     <Resource Include="cats\cat_04.png" />
     <Resource Include="cats\cat_05.png" />
     <Resource Include="cats\cat_06.png" />
-    <Resource Include="cats\сat_07.png" />
-    <Resource Include="cats\сat_08.png" />
-    <Resource Include="cats\сat_09.png" />
+    <Resource Include="cats\сat_blanc_01.png" />
+    <Resource Include="cats\cat_blanc_02.png" />
+    <Resource Include="cats\cat_blanc_03.png" />
   </ItemGroup>
 
   <ItemGroup>
