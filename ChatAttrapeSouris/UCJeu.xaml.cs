@@ -34,10 +34,7 @@ namespace ChatAttrapeSouris
             
         }
 
-        private void menuParametre_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void InitializeTimer()
         {
