@@ -22,7 +22,6 @@
         
         <Image x:Name="Fond1" Height="420" Canvas.Left="0" Source="/fonds/background1.jpg" Stretch="Fill" Canvas.Top="30" Width="1380" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image x:Name="Fond2" Height="420" Canvas.Left="1368" Source="/fonds/background1.jpg" Stretch="Fill" Canvas.Top="30" Width="1380" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        
         <Image x:Name="imgPerso" Height="260" Canvas.Left="48" Source="/cats/cat_01.png" Stretch="Fill" Canvas.Top="138" Width="216"/>
 
     </Canvas>

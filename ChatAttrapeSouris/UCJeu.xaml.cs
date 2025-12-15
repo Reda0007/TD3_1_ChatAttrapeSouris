@@ -95,8 +95,9 @@ namespace ChatAttrapeSouris
 
         private void menuParametre_Click(object sender, RoutedEventArgs e)
         {
-            UCParametres uc = new UCParametres();
-            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+            minuterie.Stop();
+            Parametres parametreWindow = new Parametres();
+            bool? rep = parametreWindow.ShowDialog();
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)

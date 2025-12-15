@@ -21,14 +21,14 @@ namespace ChatAttrapeSouris
         public static double son;
         public static string Perso { get; set; }
 
-       
+
 
 
         public MainWindow()
         {
             InitializeComponent();
             AfficheMenu();
-            
+
         }
 
 
@@ -86,13 +86,14 @@ namespace ChatAttrapeSouris
             uc.Annul.Click += AfficheJeu;
             uc.Exit.Click += AfficheDebutDuJeu;
         }
-        private void AficherResultat(object sender, RoutedEventArgs e)
-        {
-            UCResultat uc = new UCResultat();
-            ZoneJeu.Content = uc;
-            uc.ButtonRejouer.Click += AfficheJeu;
-            uc.ButtonMenu.Click += AfficheDebutDuJeu;
+        //private void AficherResultat(object sender, RoutedEventArgs e)
+        //{
+        //    UCResultat uc = new UCResultat();
+        //    ZoneJeu.Content = uc;
+        //    uc.ButtonRejouer.Click += AfficheJeu;
+        //    uc.ButtonMenu.Click += AfficheDebutDuJeu;
 
 
-        }
+        //}
+    }
 }
