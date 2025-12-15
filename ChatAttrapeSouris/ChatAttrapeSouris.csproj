@@ -33,23 +33,13 @@
     <None Remove="fonds\fond6.png" />
     <None Remove="fonds\fondP.jpg" />
     <None Remove="fonds\mouseFond.jpg" />
-    <None Remove="IMAGES\Apartment.png" />
-    <None Remove="IMAGES\Background_1.png" />
     <None Remove="IMAGES\box.png" />
     <None Remove="IMAGES\bricked_bushes.png" />
-    <None Remove="IMAGES\cat.png" />
-    <None Remove="IMAGES\chat_blanc_choix.png" />
-    <None Remove="IMAGES\chat_jaune_choix.png" />
     <None Remove="IMAGES\fish1.png" />
     <None Remove="IMAGES\fish2.png" />
     <None Remove="IMAGES\fish3.png" />
-    <None Remove="IMAGES\fondfromage.jpg" />
     <None Remove="IMAGES\imageFondUC.jpg" />
-    <None Remove="IMAGES\JouerBouton.jpg" />
     <None Remove="IMAGES\mouse.png" />
-    <None Remove="IMAGES\ReglesBouton.jpg" />
-    <None Remove="IMAGES\stone_edge_beds.png" />
-    <None Remove="IMAGES\Titre.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,8 +49,6 @@
     <Resource Include="cats\cat_04.png" />
     <Resource Include="cats\cat_05.png" />
     <Resource Include="cats\cat_06.png" />
-    <Resource Include="IMAGES\chat_blanc_choix.png" />
-    <Resource Include="IMAGES\chat_jaune_choix.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -82,21 +70,13 @@
     <Resource Include="fonds\fond6.png" />
     <Resource Include="fonds\fondP.jpg" />
     <Resource Include="fonds\mouseFond.jpg" />
-    <Resource Include="IMAGES\Apartment.png" />
-    <Resource Include="IMAGES\Background_1.png" />
     <Resource Include="IMAGES\box.png" />
     <Resource Include="IMAGES\bricked_bushes.png" />
-    <Resource Include="IMAGES\cat.png" />
     <Resource Include="IMAGES\fish1.png" />
     <Resource Include="IMAGES\fish2.png" />
     <Resource Include="IMAGES\fish3.png" />
-    <Resource Include="IMAGES\fondfromage.jpg" />
     <Resource Include="IMAGES\imageFondUC.jpg" />
-    <Resource Include="IMAGES\JouerBouton.jpg" />
     <Resource Include="IMAGES\mouse.png" />
-    <Resource Include="IMAGES\ReglesBouton.jpg" />
-    <Resource Include="IMAGES\stone_edge_beds.png" />
-    <Resource Include="IMAGES\Titre.jpg" />
   </ItemGroup>
 
 </Project>

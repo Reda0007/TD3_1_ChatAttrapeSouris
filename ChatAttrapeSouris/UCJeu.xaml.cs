@@ -27,14 +27,22 @@ namespace ChatAttrapeSouris
         public static BitmapImage[] persos = new BitmapImage[3];
         private int nb = 0;
         private int nbTours;
-      
+        private bool saut = false;
+        
+
+       
+
+        // Modifiez la méthode Deplace pour gérer le repositionnement
+        
+
 
         public UCJeu()
         {
             InitializeComponent();
             InitializeImages();
+             // Nouvelle méthode
             InitializeTimer();
-            BoxPosition();     
+
         }
 
         private void BoxPosition()
@@ -71,19 +79,23 @@ namespace ChatAttrapeSouris
             Canvas.SetLeft(image, Canvas.GetLeft(image) - pas);
 
             if (Canvas.GetLeft(image) + image.Width <= 0)
-                Canvas.SetLeft(image, image.Width);
+                Canvas.SetLeft(image, this.ActualWidth);
         }
         private void Jeu(object? sender, EventArgs e)
         {
- 
-            Deplace(Fond1, 2);
-            Deplace(Fond2, 2);
-
-
 
             if (saut)
                 Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 2);
 
+            Deplace(Fond1, 2);
+            Deplace(Fond2, 2);
+            Deplace(buisson, 2);
+            
+            Deplace(box, 2);
+           
+
+            if (saut)
+                Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 2);
 
             nbTours++;
             if (nbTours == 4)
@@ -96,7 +108,7 @@ namespace ChatAttrapeSouris
                 nbTours = 0;
             }
         }
-        private static bool saut;
+        
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space)
