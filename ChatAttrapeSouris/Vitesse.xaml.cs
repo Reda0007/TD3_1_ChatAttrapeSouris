@@ -22,6 +22,19 @@ namespace ChatAttrapeSouris
         public Vitesse()
         {
             InitializeComponent();
+            this.slidVitesse.Value = MainWindow.vitesse;
+        }
+
+        private void button_ok_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+
+        }
+
+        private void button_annuler_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+
         }
     }
 }
