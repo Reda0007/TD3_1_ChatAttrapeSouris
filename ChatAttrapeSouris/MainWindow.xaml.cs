@@ -21,14 +21,14 @@ namespace ChatAttrapeSouris
         public static double son;
         public static string Perso { get; set; }
 
-       
+
 
 
         public MainWindow()
         {
             InitializeComponent();
             AfficheMenu();
-            
+
         }
 
 
@@ -95,4 +95,5 @@ namespace ChatAttrapeSouris
 
 
         }
+    }
 }

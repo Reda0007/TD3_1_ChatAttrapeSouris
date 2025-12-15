@@ -95,7 +95,7 @@ namespace ChatAttrapeSouris
 
         private void menuParametre_Click(object sender, RoutedEventArgs e)
         {
-            UCParametres uc = new UCParametres();
+            Parametres uc = new Parametres();
             ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
         }
 
