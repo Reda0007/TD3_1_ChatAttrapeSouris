@@ -25,5 +25,22 @@ namespace ChatAttrapeSouris
             InitializeComponent();
         }
 
+        private void ButtonRegles_Click(object sender, RoutedEventArgs e)
+        {
+            UCRegles uc = new UCRegles();
+            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc; 
+        }
+
+        private void ButtonChoixChat_Click(object sender, RoutedEventArgs e)
+        {
+            UCJeu uc = new UCJeu();
+            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+        }
+
+        private void ButtonJeu_Click(object sender, RoutedEventArgs e)
+        {
+            ParametresVitesse uc = new ParametresVitesse();
+            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+        }
     }
 }

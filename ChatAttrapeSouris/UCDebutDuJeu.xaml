@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button x:Name="ButtonRegles" Content="Regles" HorizontalAlignment="Left" Margin="534,200,0,0" VerticalAlignment="Top" Width="84" Height="25" FontSize="18" FontFamily="Algerian">
+        <Button x:Name="ButtonRegles" Content="Regles" HorizontalAlignment="Left" Margin="534,200,0,0" VerticalAlignment="Top" Width="84" Height="25" FontSize="18" FontFamily="Algerian" Click="ButtonRegles_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80CFF0"/>
@@ -15,7 +15,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonChoixChat" Content="Chat" HorizontalAlignment="Left" Margin="534,254,0,0" VerticalAlignment="Top" Width="76" Height="25" FontFamily="Algerian" FontSize="18">
+        <Button x:Name="ButtonChoixChat" Content="Chat" HorizontalAlignment="Left" Margin="534,254,0,0" VerticalAlignment="Top" Width="76" Height="25" FontFamily="Algerian" FontSize="18" Click="ButtonChoixChat_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF99B38D"/>
@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonJeu" Content="Paramètres" HorizontalAlignment="Left" Margin="534,312,0,0" VerticalAlignment="Top" Width="130" Height="25" FontSize="18" FontFamily="Algerian">
+        <Button x:Name="ButtonJeu" Content="Paramètres" HorizontalAlignment="Left" Margin="534,312,0,0" VerticalAlignment="Top" Width="130" Height="25" FontSize="18" FontFamily="Algerian" Click="ButtonJeu_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9A6F47"/>
