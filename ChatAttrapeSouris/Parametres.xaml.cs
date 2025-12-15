@@ -15,26 +15,25 @@ using System.Windows.Shapes;
 namespace ChatAttrapeSouris
 {
     /// <summary>
-    /// Logique d'interaction pour Vitesse.xaml
+    /// Logique d'interaction pour Parametres.xaml
     /// </summary>
-    public partial class Vitesse : Window
+    public partial class Parametres : Window
     {
-        public Vitesse()
+        public Parametres()
         {
             InitializeComponent();
             this.slidVitesse.Value = MainWindow.vitesse;
+            this.slidSon.Value = MainWindow.son;
         }
 
-        private void button_ok_Click(object sender, RoutedEventArgs e)
+        private void ButtonConfirmer_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
-
         }
 
-        private void button_annuler_Click(object sender, RoutedEventArgs e)
+        private void buttonAnnuler_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
-
         }
     }
 }
