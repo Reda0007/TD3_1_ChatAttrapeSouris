@@ -16,9 +16,6 @@ using System.Windows.Threading;
 
 namespace ChatAttrapeSouris
 {
-    /// <summary>
-    /// Logique d'interaction pour UCJeu.xaml
-    /// </summary>
     public partial class UCJeu : UserControl
     {
         private DispatcherTimer minuterie;
@@ -30,57 +27,37 @@ namespace ChatAttrapeSouris
         private bool saut = false;
         private bool enSaut = false;
         private double vitesseSaut = 0;
-        private double gravite = 1;
-        private double positionSolY; // Position Y du sol
-
-
-
-
-        // Modifiez la méthode Deplace pour gérer le repositionnement
-
-
+        private const double GRAVITE = 1;
+        private const double FORCE_SAUT = 15;
+        private double positionSolY;
 
         public UCJeu()
         {
             InitializeComponent();
             InitializeImages();
-            InitializeTimer();
 
-            // Sauvegarder la position initiale au sol
+            // IMPORTANT : Initialiser positionSolY AVANT InitializeTimer
             positionSolY = Canvas.GetBottom(imgPerso);
-
-            // Vérifier si positionSolY est valide
             if (double.IsNaN(positionSolY))
             {
                 positionSolY = 0;
                 Canvas.SetBottom(imgPerso, positionSolY);
             }
 
+            InitializeTimer();
         }
 
+        // CORRIGER : Utiliser la variable saut au lieu de enSaut directement
         public void GererKeyDown(KeyEventArgs e)
         {
-            if (e.Key == Key.Space && !enSaut)
-            {
-                enSaut = true;
-                vitesseSaut = 15;
-            }
+            if (e.Key == Key.Space)
+                saut = true;
         }
 
         public void GererKeyUp(KeyEventArgs e)
         {
-            // Vide pour l'instant
-        }
-
-        private void BoxPosition()
-        {
-            positionbox -= vitesse;
-            Canvas.SetLeft(box, positionbox);
-            // Si la box sort de l'écran à gauche, le repositionner à droite
-            if (positionbox < -box.Width)
-            {
-                positionbox = this.Width;
-            }
+            if (e.Key == Key.Space)
+                saut = false;
         }
 
         private void InitializeTimer()
@@ -88,11 +65,8 @@ namespace ChatAttrapeSouris
             positionbox = 800;
             Canvas.SetLeft(box, positionbox);
             minuterie = new DispatcherTimer();
-            // configure l'intervalle du Timer :62 images par s
             minuterie.Interval = TimeSpan.FromMilliseconds(16);
-            // associe l’appel de la méthode Jeu à la fin de la minuterie
             minuterie.Tick += Jeu;
-            // lancement du timer
             minuterie.Start();
         }
 
@@ -101,31 +75,31 @@ namespace ChatAttrapeSouris
             for (int i = 0; i < persos.Length; i++)
                 persos[i] = new BitmapImage(new Uri($"pack://application:,,,/cats/cat_0{i + 1}.png"));
         }
+
         public void Deplace(Image image, int pas)
         {
             Canvas.SetLeft(image, Canvas.GetLeft(image) - pas);
 
-            if (Canvas.GetLeft(image) + image.Width <= 0)
+            if (Canvas.GetLeft(image) + image.ActualWidth <= 0)
                 Canvas.SetLeft(image, this.ActualWidth);
         }
 
-        
-        private void Jeu(object? sender, EventArgs e)
+        // NOUVELLE MÉTHODE : Gérer le saut avec gravité
+        private void GererSaut()
         {
+            // Démarrer le saut siespace est pressé et qu'on n'est pas déjà en train de sauter
+            if (saut && !enSaut)
+            {
+                enSaut = true;
+                vitesseSaut = FORCE_SAUT;
+            }
 
-
-
-            Deplace(Fond1, 2);
-            Deplace(Fond2, 2);
-            Deplace(buisson, 2);
-            Deplace(box, 2);
-
-            // Gestion du saut
+            // Si on est en train de sauter
             if (enSaut)
             {
                 double positionActuelle = Canvas.GetBottom(imgPerso);
                 positionActuelle += vitesseSaut;
-                vitesseSaut -= gravite; // La gravité ralentit puis inverse le saut
+                vitesseSaut -= GRAVITE; // La gravité ralentit puis inverse le saut
 
                 Canvas.SetBottom(imgPerso, positionActuelle);
 
@@ -137,26 +111,85 @@ namespace ChatAttrapeSouris
                     vitesseSaut = 0;
                 }
             }
+        }
 
-            nbTours++;
-            if (nbTours == 4)
+        // NOUVELLE MÉTHODE : Détecter collision
+        private bool DetecterCollision(Image objet1, Image objet2)
+        {
+            double left1 = Canvas.GetLeft(objet1);
+            double bottom1 = Canvas.GetBottom(objet1);
+
+            double left2 = Canvas.GetLeft(objet2);
+            double bottom2 = Canvas.GetBottom(objet2);
+
+            // Calculer les rectangles de collision
+            double right1 = left1 + objet1.ActualWidth;
+            double top1 = bottom1 + objet1.ActualHeight;
+
+            double right2 = left2 + objet2.ActualWidth;
+            double top2 = bottom2 + objet2.ActualHeight;
+
+            // Vérifier le chevauchement
+            bool collisionX = left1 < right2 && right1 > left2;
+            bool collisionY = bottom1 < top2 && top1 > bottom2;
+
+            return collisionX && collisionY;
+        }
+
+        // NOUVELLE MÉTHODE : Fin du jeu
+        private void FinDuJeu()
+        {
+            minuterie.Stop();
+            MessageBox.Show("Game Over ! Vous avez touché un obstacle.", "Fin du jeu");
+
+            // Retourner au menu
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.AfficheMenu();
+        }
+
+        private void Jeu(object? sender, EventArgs e)
+        {
+            // Déplacement du décor
+            Deplace(Fond1, 2);
+            Deplace(Fond2, 2);
+            Deplace(buisson, 2);
+            Deplace(box, 2);
+
+            // APPELER la méthode de gestion du saut
+            GererSaut();
+
+            // VÉRIFIER la collision avec l'obstacle
+            if (DetecterCollision(imgPerso, box))
             {
-                nb++;
-                if (nb == persos.Length)
-                    nb = 0;
+                FinDuJeu();
+                return; // Arrêter le traitement
+            }
 
-                imgPerso.Source = persos[nb];
-                nbTours = 0;
+            // Animation du personnage (seulement si pas en saut)
+            if (!enSaut)
+            {
+                nbTours++;
+                if (nbTours == 4)
+                {
+                    nb++;
+                    if (nb == persos.Length)
+                        nb = 0;
+
+                    imgPerso.Source = persos[nb];
+                    nbTours = 0;
+                }
             }
         }
-        
-        
-        
+
         private void menuParametre_Click(object sender, RoutedEventArgs e)
         {
             minuterie.Stop();
             Parametres parametreWindow = new Parametres();
             bool? rep = parametreWindow.ShowDialog();
+
+            // Relancer le timer si l'utilisateur n'a pas quitté
+            if (rep == true)
+                minuterie.Start();
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
@@ -164,45 +197,223 @@ namespace ChatAttrapeSouris
             minuterie.Stop();
             UCPause parametreWindow = new UCPause();
             bool? rep = parametreWindow.ShowDialog();
+
+            // Relancer le timer si l'utilisateur continue
+            if (rep == false) // false = annuler = continuer
+                minuterie.Start();
         }
 
-
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        private void MainGrid_KeyUp(object sender, KeyEventArgs e)
         {
-            Application.Current.MainWindow.KeyDown += MainGrid_KeyDown;
+
         }
 
         private void MainGrid_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Space)
-            {
-                Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 15);
-            }
+
         }
 
+        // SUPPRIMER ces méthodes qui font doublon et causent des conflits
+        // private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        // {
+        //     Application.Current.MainWindow.KeyDown += MainGrid_KeyDown;
+        // }
 
-
-
-
-        //private void Jeu(object? sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void menuParametre_Click(object sender, RoutedEventArgs e)
-        //{
-        //    minuterie.Stop();
-        //    ParametresVitesse parametresvitesse = new ParametresVitesse();
-
-        //}
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    UCPause pauseOverlay = new UCPause();
-
-        //    MainGrid.Children.Add(pauseOverlay);
-        //
-        //}
+        // private void MainGrid_KeyDown(object sender, KeyEventArgs e)
+        // {
+        //     if (e.Key == Key.Space)
+        //     {
+        //         Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 15);
+        //     }
+        // }
     }
+    /// <summary>
+    /// Logique d'interaction pour UCJeu.xaml
+    /// </summary>
+    //public partial class UCJeu : UserControl
+    //{
+    //    private DispatcherTimer minuterie;
+    //    private double vitesse = 5;
+    //    private double positionbox;
+    //    public static BitmapImage[] persos = new BitmapImage[3];
+    //    private int nb = 0;
+    //    private int nbTours;
+    //    private bool saut = false;
+    //    private bool enSaut = false;
+    //    private double vitesseSaut = 0;
+    //    private double gravite = 1;
+    //    private double positionSolY; // Position Y du sol
+
+
+
+
+    //    // Modifiez la méthode Deplace pour gérer le repositionnement
+
+
+
+    //    public UCJeu()
+    //    {
+    //        InitializeComponent();
+    //        InitializeImages();
+    //        InitializeTimer();
+
+    //        // Sauvegarder la position initiale au sol
+    //        positionSolY = Canvas.GetBottom(imgPerso);
+
+    //        // Vérifier si positionSolY est valide
+    //        if (double.IsNaN(positionSolY))
+    //        {
+    //            positionSolY = 0;
+    //            Canvas.SetBottom(imgPerso, positionSolY);
+    //        }
+
+    //    }
+
+    //    public void GererKeyDown(KeyEventArgs e)
+    //    {
+    //        if (e.Key == Key.Space && !enSaut)
+    //        {
+    //            enSaut = true;
+    //            vitesseSaut = 15;
+    //        }
+    //    }
+
+    //    public void GererKeyUp(KeyEventArgs e)
+    //    {
+    //        // Vide pour l'instant
+    //    }
+
+    //    private void BoxPosition()
+    //    {
+    //        positionbox -= vitesse;
+    //        Canvas.SetLeft(box, positionbox);
+    //        // Si la box sort de l'écran à gauche, le repositionner à droite
+    //        if (positionbox < -box.Width)
+    //        {
+    //            positionbox = this.Width;
+    //        }
+    //    }
+
+    //    private void InitializeTimer()
+    //    {
+    //        positionbox = 800;
+    //        Canvas.SetLeft(box, positionbox);
+    //        minuterie = new DispatcherTimer();
+    //        // configure l'intervalle du Timer :62 images par s
+    //        minuterie.Interval = TimeSpan.FromMilliseconds(16);
+    //        // associe l’appel de la méthode Jeu à la fin de la minuterie
+    //        minuterie.Tick += Jeu;
+    //        // lancement du timer
+    //        minuterie.Start();
+    //    }
+
+    //    private void InitializeImages()
+    //    {
+    //        for (int i = 0; i < persos.Length; i++)
+    //            persos[i] = new BitmapImage(new Uri($"pack://application:,,,/cats/cat_0{i + 1}.png"));
+    //    }
+    //    public void Deplace(Image image, int pas)
+    //    {
+    //        Canvas.SetLeft(image, Canvas.GetLeft(image) - pas);
+
+    //        if (Canvas.GetLeft(image) + image.Width <= 0)
+    //            Canvas.SetLeft(image, this.ActualWidth);
+    //    }
+
+
+    //    private void Jeu(object? sender, EventArgs e)
+    //    {
+
+
+
+    //        Deplace(Fond1, 2);
+    //        Deplace(Fond2, 2);
+    //        Deplace(buisson, 2);
+    //        Deplace(box, 2);
+
+    //        // Gestion du saut
+    //        if (enSaut)
+    //        {
+    //            double positionActuelle = Canvas.GetBottom(imgPerso);
+    //            positionActuelle += vitesseSaut;
+    //            vitesseSaut -= gravite; // La gravité ralentit puis inverse le saut
+
+    //            Canvas.SetBottom(imgPerso, positionActuelle);
+
+    //            // Vérifier si on retombe au sol
+    //            if (positionActuelle <= positionSolY)
+    //            {
+    //                Canvas.SetBottom(imgPerso, positionSolY);
+    //                enSaut = false;
+    //                vitesseSaut = 0;
+    //            }
+    //        }
+
+    //        nbTours++;
+    //        if (nbTours == 4)
+    //        {
+    //            nb++;
+    //            if (nb == persos.Length)
+    //                nb = 0;
+
+    //            imgPerso.Source = persos[nb];
+    //            nbTours = 0;
+    //        }
+    //    }
+
+
+
+    //    private void menuParametre_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        minuterie.Stop();
+    //        Parametres parametreWindow = new Parametres();
+    //        bool? rep = parametreWindow.ShowDialog();
+    //    }
+
+    //    private void ButtonPause_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        minuterie.Stop();
+    //        UCPause parametreWindow = new UCPause();
+    //        bool? rep = parametreWindow.ShowDialog();
+    //    }
+
+
+
+    //    private void UserControl_Loaded(object sender, RoutedEventArgs e)
+    //    {
+    //        Application.Current.MainWindow.KeyDown += MainGrid_KeyDown;
+    //    }
+
+    //    private void MainGrid_KeyDown(object sender, KeyEventArgs e)
+    //    {
+    //        if (e.Key == Key.Space)
+    //        {
+    //            Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 15);
+    //        }
+    //    }
+
+
+
+
+
+    //private void Jeu(object? sender, EventArgs e)
+    //{
+
+    //}
+
+    //private void menuParametre_Click(object sender, RoutedEventArgs e)
+    //{
+    //    minuterie.Stop();
+    //    ParametresVitesse parametresvitesse = new ParametresVitesse();
+
+    //}
+
+    //private void Button_Click(object sender, RoutedEventArgs e)
+    //{
+    //    UCPause pauseOverlay = new UCPause();
+
+    //    MainGrid.Children.Add(pauseOverlay);
+    //
+    //}
 }
+
