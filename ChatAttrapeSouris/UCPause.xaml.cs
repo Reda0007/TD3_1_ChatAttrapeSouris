@@ -27,15 +27,15 @@ namespace ChatAttrapeSouris
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow; 
             this.Close();
         }
 
         private void Annul_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            
             this.Close();
-            mainWindow.AfficheJeu(this, new RoutedEventArgs());
+            
         }
     }
 }
