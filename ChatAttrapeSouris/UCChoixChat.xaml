@@ -11,12 +11,12 @@
         <Button x:Name="butJouer" Content="Jouer" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" IsEnabled="False"/>
         <RadioButton x:Name="RBChatBlanc"  HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Width="646" Click="RBChatBlanc_Click">
             <RadioButton.Content>
-                <Image Source="IMAGES/chat_blanc_choix.png" Width="150" Height="150"/>
+                <Image Source="cats/cat_06.png" Width="150" Height="150"/>
             </RadioButton.Content>
         </RadioButton>
         <RadioButton x:Name="RBChatJaune" HorizontalAlignment="Center" Margin="617,182,0,0" VerticalAlignment="Top" Click="RBChatJaune_Click">
             <RadioButton.Content>
-                <Image Source="IMAGES/chat_jaune_choix.png" Width="150" Height="150"/>
+                <Image Source="cats/cat_05.png" Width="150" Height="150"/>
             </RadioButton.Content>
         </RadioButton>
     </Grid>
