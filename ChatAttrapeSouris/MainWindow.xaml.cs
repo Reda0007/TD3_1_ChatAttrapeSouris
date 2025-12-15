@@ -19,12 +19,14 @@ namespace ChatAttrapeSouris
     {
         public static double vitesse;
         public static string Perso { get; set; }
-        public static BitmapImage[] persos = new BitmapImage[3];
+       
+
+
         public MainWindow()
         {
             InitializeComponent();
             AfficheMenu();
-            InitializeImages();
+            
 
         }
 
@@ -50,7 +52,7 @@ namespace ChatAttrapeSouris
 
         private void AfficheParametres(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void AfficheChoixChat(object sender, RoutedEventArgs e)
@@ -62,9 +64,10 @@ namespace ChatAttrapeSouris
 
         private void AfficheJeu(object sender, RoutedEventArgs e)
         {
-           UCJeu uc = new UCJeu();
-           ZoneJeu.Content = uc;
-           
+            UCJeu uc = new UCJeu();
+            ZoneJeu.Content = uc;
+            uc.ButtonPause.Click += AffichePause;
+
         }
 
         private void AfficheRegles(object sender, RoutedEventArgs e)
@@ -78,11 +81,15 @@ namespace ChatAttrapeSouris
         {
             AfficheMenu();
         }
-
-        private void InitializeImages()
+        private void AffichePause(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < persos.Length; i++)
-                persos[i] = new BitmapImage(new Uri($"pack://application:,,,/cat/cat_0{i + 1}.gif"));
+            UCPause uc = new UCPause();
+            ZoneJeu.Content = uc;
+            uc.Annul.Click += AfficheJeu;
+            uc.Exit.Click += AfficheDebutDuJeu;
         }
+
+
+
     }
 }

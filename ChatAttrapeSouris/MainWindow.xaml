@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatAttrapeSouris"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center">
 
     <Window.Background>
         <ImageBrush ImageSource="/fonds/fondP.jpg"/>
     </Window.Background>
-    <ContentControl x:Name="ZoneJeu"/>
+    <Grid>
+        <ContentControl x:Name="ZoneJeu"/>
+    </Grid>
 </Window>
