@@ -14,7 +14,7 @@
                 <Image Source="cats/cat_06.png" Width="150" Height="150"/>
             </RadioButton.Content>
         </RadioButton>
-        <RadioButton x:Name="RBChatJaune" HorizontalAlignment="Center" Margin="617,182,0,0" VerticalAlignment="Top" Click="RBChatJaune_Click">
+        <RadioButton x:Name="RBChatJaune" HorizontalAlignment="Left" Margin="554,182,0,0" VerticalAlignment="Top" Click="RBChatJaune_Click">
             <RadioButton.Content>
                 <Image Source="cats/cat_05.png" Width="150" Height="150"/>
             </RadioButton.Content>
