@@ -18,7 +18,7 @@ namespace ChatAttrapeSouris
     /// <summary>
     /// Interaction logic for UCPause.xaml
     /// </summary>
-    public partial class UCPause : UserControl
+    public partial class UCPause : Window
     {
         public UCPause()
         {
