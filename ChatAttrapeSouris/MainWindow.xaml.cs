@@ -27,7 +27,6 @@ namespace ChatAttrapeSouris
             InitializeComponent();
             AfficheMenu();
             
-
         }
 
 
