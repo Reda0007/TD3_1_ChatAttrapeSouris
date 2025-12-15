@@ -33,13 +33,13 @@ namespace ChatAttrapeSouris
 
         private void ButtonChoixChat_Click(object sender, RoutedEventArgs e)
         {
-            UCJeu uc = new UCJeu();
+            UCChoixChat uc = new UCChoixChat();
             ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
         }
 
-        private void ButtonJeu_Click(object sender, RoutedEventArgs e)
+        private void ButtonParametres_Click(object sender, RoutedEventArgs e)
         {
-            ParametresVitesse uc = new ParametresVitesse();
+            UCParametres uc = new UCParametres();
             ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
         }
     }
