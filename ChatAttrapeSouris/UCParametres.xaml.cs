@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ChatAttrapeSouris
 {
     /// <summary>
-    /// Logique d'interaction pour ParametresVitesse.xaml
+    /// Logique d'interaction pour UCParametres.xaml
     /// </summary>
-    public partial class ParametresVitesse : Window
+    public partial class UCParametres : UserControl
     {
-        public ParametresVitesse()
+        public UCParametres()
         {
             InitializeComponent();
-            this.slidVitesse.Value = MainWindow.vitesse;
-        }
-
-        private void button_ok_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
-        private void button_annuler_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = false;
         }
     }
 }

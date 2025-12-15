@@ -52,6 +52,8 @@ namespace ChatAttrapeSouris
 
         private void AfficheParametres(object sender, RoutedEventArgs e)
         {
+            UCParametres uc = new UCParametres();
+            ZoneJeu.Content = uc;
 
         }
 
