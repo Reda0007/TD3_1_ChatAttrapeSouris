@@ -24,31 +24,18 @@ namespace ChatAttrapeSouris
         {
             InitializeComponent();
         }
-        private void Annul_Click(object sender, RoutedEventArgs e)
-        {
 
-            var parentControl = this.Parent as Panel;
-
-            if (parentControl != null)
-            {
-
-                parentControl.Children.Remove(this);
-            }
-        }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            this.Close();
+        }
 
-            UCDebutDuJeu menuPage = new UCDebutDuJeu();
-
-
-            Window mainWindow = Window.GetWindow(this);
-
-
-            if (mainWindow != null)
-            {
-
-                mainWindow.Content = menuPage;
-            }
+        private void Annul_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            this.Close();
+            mainWindow.AfficheJeu(this, new RoutedEventArgs());
         }
     }
 }

@@ -64,7 +64,7 @@ namespace ChatAttrapeSouris
             uc.butJouer.Click += AfficheJeu;
         }
 
-        private void AfficheJeu(object sender, RoutedEventArgs e)
+        public void AfficheJeu(object sender, RoutedEventArgs e)
         {
             UCJeu uc = new UCJeu();
             ZoneJeu.Content = uc;
