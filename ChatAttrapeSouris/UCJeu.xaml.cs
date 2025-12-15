@@ -28,21 +28,48 @@ namespace ChatAttrapeSouris
         private int nb = 0;
         private int nbTours;
         private bool saut = false;
-        
+        private bool enSaut = false;
+        private double vitesseSaut = 0;
+        private double gravite = 1;
+        private double positionSolY; // Position Y du sol
 
-       
+
+
 
         // Modifiez la méthode Deplace pour gérer le repositionnement
-        
+
 
 
         public UCJeu()
         {
             InitializeComponent();
             InitializeImages();
-             // Nouvelle méthode
             InitializeTimer();
 
+            // Sauvegarder la position initiale au sol
+            positionSolY = Canvas.GetBottom(imgPerso);
+
+            // Vérifier si positionSolY est valide
+            if (double.IsNaN(positionSolY))
+            {
+                positionSolY = 0;
+                Canvas.SetBottom(imgPerso, positionSolY);
+            }
+
+        }
+
+        public void GererKeyDown(KeyEventArgs e)
+        {
+            if (e.Key == Key.Space && !enSaut)
+            {
+                enSaut = true;
+                vitesseSaut = 15;
+            }
+        }
+
+        public void GererKeyUp(KeyEventArgs e)
+        {
+            // Vide pour l'instant
         }
 
         private void BoxPosition()
@@ -81,21 +108,35 @@ namespace ChatAttrapeSouris
             if (Canvas.GetLeft(image) + image.Width <= 0)
                 Canvas.SetLeft(image, this.ActualWidth);
         }
+
+        
         private void Jeu(object? sender, EventArgs e)
         {
 
-            if (saut)
-                Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 2);
+
 
             Deplace(Fond1, 2);
             Deplace(Fond2, 2);
             Deplace(buisson, 2);
-            
             Deplace(box, 2);
-           
 
-            if (saut)
-                Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 2);
+            // Gestion du saut
+            if (enSaut)
+            {
+                double positionActuelle = Canvas.GetBottom(imgPerso);
+                positionActuelle += vitesseSaut;
+                vitesseSaut -= gravite; // La gravité ralentit puis inverse le saut
+
+                Canvas.SetBottom(imgPerso, positionActuelle);
+
+                // Vérifier si on retombe au sol
+                if (positionActuelle <= positionSolY)
+                {
+                    Canvas.SetBottom(imgPerso, positionSolY);
+                    enSaut = false;
+                    vitesseSaut = 0;
+                }
+            }
 
             nbTours++;
             if (nbTours == 4)
@@ -109,17 +150,8 @@ namespace ChatAttrapeSouris
             }
         }
         
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Space)
-                saut = true;
-        }
-        private void Window_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Space)
-                saut = false;
-        }
-
+        
+        
         private void menuParametre_Click(object sender, RoutedEventArgs e)
         {
             minuterie.Stop();
@@ -134,7 +166,24 @@ namespace ChatAttrapeSouris
             bool? rep = parametreWindow.ShowDialog();
         }
 
-        
+
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.KeyDown += MainGrid_KeyDown;
+        }
+
+        private void MainGrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                Canvas.SetBottom(imgPerso, Canvas.GetBottom(imgPerso) + 15);
+            }
+        }
+
+
+
+
 
         //private void Jeu(object? sender, EventArgs e)
         //{

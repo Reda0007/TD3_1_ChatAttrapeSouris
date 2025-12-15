@@ -55,8 +55,6 @@
     <Resource Include="cats\сat_07.png" />
     <Resource Include="cats\сat_08.png" />
     <Resource Include="cats\сat_09.png" />
-    <Resource Include="IMAGES\chat_blanc_choix.png" />
-    <Resource Include="IMAGES\chat_jaune_choix.png" />
   </ItemGroup>
 
   <ItemGroup>
