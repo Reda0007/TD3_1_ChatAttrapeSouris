@@ -33,10 +33,8 @@ namespace ChatAttrapeSouris
         }
 
         private void Annul_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {  
             this.Close();
-            
         }
     }
 }
