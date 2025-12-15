@@ -21,12 +21,13 @@ namespace ChatAttrapeSouris
     /// </summary>
     public partial class UCJeu : UserControl
     {
-        private static DispatcherTimer minuterie;
+        private DispatcherTimer minuterie;
         private double vitesse = 5;
-        private double positionbox, positionbuisson;
+        private double positionbox;
         public static BitmapImage[] persos = new BitmapImage[3];
         private int nb = 0;
         private int nbTours;
+      
 
         public UCJeu()
         {
@@ -49,7 +50,7 @@ namespace ChatAttrapeSouris
 
         private void InitializeTimer()
         {
-            positionbox = this.Width;
+            positionbox = 800;
             Canvas.SetLeft(box, positionbox);
             minuterie = new DispatcherTimer();
             // configure l'intervalle du Timer :62 images par s
@@ -77,6 +78,7 @@ namespace ChatAttrapeSouris
  
             Deplace(Fond1, 2);
             Deplace(Fond2, 2);
+
 
 
             if (saut)

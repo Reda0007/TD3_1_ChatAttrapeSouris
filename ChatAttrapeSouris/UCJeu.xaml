@@ -23,9 +23,8 @@
         <Image x:Name="Fond1" Height="420" Canvas.Left="0" Source="/fonds/background1.jpg" Stretch="Fill" Canvas.Top="30" Width="1380" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image x:Name="Fond2" Height="420" Canvas.Left="1368" Source="/fonds/background1.jpg" Stretch="Fill" Canvas.Top="30" Width="1380" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Image x:Name="imgPerso" Height="260" Canvas.Left="48" Source="/cats/cat_01.png" Stretch="Fill" Canvas.Top="138" Width="216"/>
-        <Image x:Name="box" Height="64" Canvas.Left="823" Source="/IMAGES/box.png" Stretch="Fill" Canvas.Top="318" Width="64"/>
-        <Image x:Name="buisson" Height="96" Canvas.Left="1645" Source="/IMAGES/bricked_bushes.png" Stretch="Fill" Canvas.Top="286" Width="64" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Image x:Name="box2" Height="64" Canvas.Left="2607" Source="/IMAGES/box.png" Stretch="Fill" Canvas.Top="318" Width="64"/>
+        <Image x:Name="box" Height="64"  Source="/IMAGES/box.png" Stretch="Fill" Canvas.Top="318" Width="64"/>
+        <Image x:Name="buisson" Height="96"  Source="/IMAGES/bricked_bushes.png" Stretch="Fill" Canvas.Top="286" Width="64" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
     </Canvas>
 
