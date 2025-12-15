@@ -29,6 +29,7 @@ namespace ChatAttrapeSouris
         {
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow; 
             this.Close();
+            mainWindow?.AfficheMenu();
         }
 
         private void Annul_Click(object sender, RoutedEventArgs e)

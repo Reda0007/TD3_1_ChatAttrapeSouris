@@ -32,7 +32,7 @@ namespace ChatAttrapeSouris
         }
 
 
-        private void AfficheMenu()
+        public void AfficheMenu()
         {
             UCMenu uc = new UCMenu();
             ZoneJeu.Content = uc;
@@ -82,9 +82,7 @@ namespace ChatAttrapeSouris
         private void AffichePause(object sender, RoutedEventArgs e)
         {
             UCPause uc = new UCPause();
-            ZoneJeu.Content = uc;
-            uc.Annul.Click += AfficheJeu;
-            uc.Exit.Click += AfficheDebutDuJeu;
+            uc.ShowDialog();
         }
         //private void AficherResultat(object sender, RoutedEventArgs e)
         //{
@@ -94,5 +92,5 @@ namespace ChatAttrapeSouris
         //    uc.ButtonMenu.Click += AfficheDebutDuJeu;
 
 
-        
+    }
     }
