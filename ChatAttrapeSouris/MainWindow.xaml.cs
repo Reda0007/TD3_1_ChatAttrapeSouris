@@ -54,7 +54,18 @@ namespace ChatAttrapeSouris
         {
             UCParametres uc = new UCParametres();
             ZoneJeu.Content = uc;
+            uc.buttonson.Click += AfficheSon;
+            uc.buttonvitesse.Click += AfficheVitesse;
+        }
 
+        private void AfficheVitesse(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void AfficheSon(object sender, RoutedEventArgs e)
+        {
+          
         }
 
         private void AfficheChoixChat(object sender, RoutedEventArgs e)
