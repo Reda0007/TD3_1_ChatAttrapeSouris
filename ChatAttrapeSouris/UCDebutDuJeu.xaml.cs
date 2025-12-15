@@ -37,10 +37,10 @@ namespace ChatAttrapeSouris
             ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
         }
 
-        //private void ButtonParametres_Click(object sender, RoutedEventArgs e)
-        //{
-        //    UCParametres uc = new UCParametres();
-        //    ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
-        //}
+        private void ButtonParametres_Click(object sender, RoutedEventArgs e)
+        {
+            Parametres uc = new Parametres();
+            ((MainWindow)Application.Current.MainWindow).ZoneJeu.Content = uc;
+        }
     }
 }
