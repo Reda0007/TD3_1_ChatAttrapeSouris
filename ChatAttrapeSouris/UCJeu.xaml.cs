@@ -34,8 +34,6 @@ namespace ChatAttrapeSouris
             
         }
 
-        
-
         private void InitializeTimer()
         {
             minuterie = new DispatcherTimer();

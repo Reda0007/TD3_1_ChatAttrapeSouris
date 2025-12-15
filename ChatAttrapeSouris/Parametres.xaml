@@ -12,7 +12,7 @@
         <Button x:Name="buttonAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="261,341,0,0" VerticalAlignment="Top" Click="buttonAnnuler_Click"/>
         <Button x:Name="ButtonConfirmer" Content="Confirmer" HorizontalAlignment="Left" Margin="487,341,0,0" VerticalAlignment="Top" Click="ButtonConfirmer_Click"/>
         <Slider x:Name="slidSon"  Width="120" Minimum="1"
-             Maximum="3"
+             Maximum="5"
              Value="2"
              TickFrequency="1"
              IsSnapToTickEnabled="True"
