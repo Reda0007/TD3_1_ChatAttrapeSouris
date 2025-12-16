@@ -14,8 +14,6 @@
     <None Remove="buttonsgaming\ButtonPause.png" />
     <None Remove="buttonsgaming\buttons.png" />
     <None Remove="buttonsgaming\ButtonStart.png" />
-    <None Remove="cats\box.png" />
-    <None Remove="cats\bricked_bushes.png" />
     <None Remove="cats\cat_04.png" />
     <None Remove="cats\cat_05.png" />
     <None Remove="cats\cat_06.png" />
@@ -32,18 +30,9 @@
     <None Remove="fonds\fond6.png" />
     <None Remove="fonds\fondP.jpg" />
     <None Remove="fonds\mouseFond.jpg" />
-    <None Remove="IMAGES\box.png" />
-    <None Remove="IMAGES\bricked_bushes.png" />
-    <None Remove="IMAGES\fish1.png" />
-    <None Remove="IMAGES\fish2.png" />
-    <None Remove="IMAGES\fish3.png" />
-    <None Remove="IMAGES\imageFondUC.jpg" />
-    <None Remove="IMAGES\mouse.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="cats\box.png" />
-    <Resource Include="cats\bricked_bushes.png" />
     <Resource Include="cats\cat_04.png" />
     <Resource Include="cats\cat_05.png" />
     <Resource Include="cats\cat_06.png" />
@@ -71,8 +60,6 @@
     <Resource Include="fonds\fond6.png" />
     <Resource Include="fonds\fondP.jpg" />
     <Resource Include="fonds\mouseFond.jpg" />
-    <Resource Include="IMAGES\box.png" />
-    <Resource Include="IMAGES\bricked_bushes.png" />
   </ItemGroup>
 
 </Project>
