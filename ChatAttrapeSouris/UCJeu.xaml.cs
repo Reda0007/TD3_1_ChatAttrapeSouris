@@ -258,7 +258,7 @@ namespace ChatAttrapeSouris
             GererSaut();
 
             // VÉRIFIER la collision avec l'obstacle
-            if (Collision(imgPerso, box))
+            if (Collision(imgPerso, box) || Collision(imgPerso, buisson))
             {
                 FinDuJeu();
                 return; // Arrêter le traitement
