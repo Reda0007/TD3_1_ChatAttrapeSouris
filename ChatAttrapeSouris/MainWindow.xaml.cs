@@ -19,10 +19,8 @@ namespace ChatAttrapeSouris
     {
         public static double vitesse;
         public static double son;
+        public static int Score = 0;
         public static string Perso { get; set; }
-
-
-
 
         public MainWindow()
         {

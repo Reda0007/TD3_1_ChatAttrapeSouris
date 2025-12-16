@@ -27,6 +27,7 @@
             <Image x:Name="imgPerso" Height="200" Canvas.Bottom="50" Canvas.Left="51" Source="/cats/cat_01.png" Stretch="Fill"  Width="156" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Image x:Name="box" Height="44"  Source="/IMAGES/box.png" Stretch="Fill" Canvas.Bottom="70" Width="44" RenderTransformOrigin="13.201,0.387" Canvas.Left="623" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Image x:Name="buisson" Height="76"  Source="/IMAGES/bricked_bushes.png" Stretch="Fill" Canvas.Bottom="70" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="368"/>
+            <Label x:Name="labScore" Content="Score : 0" Canvas.Left="0" Canvas.Top="30" Height="29" Width="89" FontSize="15" FontWeight="Bold"/>
 
         </Canvas>
     </Viewbox>

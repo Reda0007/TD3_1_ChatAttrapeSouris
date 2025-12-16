@@ -19,7 +19,6 @@ namespace ChatAttrapeSouris
     public partial class UCJeu : UserControl
     {
         private DispatcherTimer minuterie;
-        private double vitesse = 5;
         private double positionbox;
         public static BitmapImage[] persos = new BitmapImage[3];
         private int nb = 0;
@@ -27,10 +26,9 @@ namespace ChatAttrapeSouris
         private BitmapImage[] spritesActuels;
         private bool enSaut = false;
         private double vitesseSaut = 0;
-        private double gravite = 0.5;
         private double positionSolY; // Position Y du sol
-        private double FORCE_SAUT=22;
-        private double GRAVITE=0.1;
+        private double FORCE_SAUT=12;
+        private double GRAVITE=0.6;
 
 
         public UCJeu()
@@ -63,7 +61,6 @@ namespace ChatAttrapeSouris
             }
 
         }
-
         public static bool Collision(Image img1, Image img2)
         {
             if ((Canvas.GetLeft(img1) + img1.ActualWidth > Canvas.GetLeft(img2) && Canvas.GetLeft(img2) + img2.ActualWidth > Canvas.GetLeft(img1)) && (Canvas.GetBottom(img1) + img1.ActualHeight > Canvas.GetBottom(img2) && Canvas.GetBottom(img2) + img2.ActualHeight > (Canvas.GetBottom(img1))))
@@ -107,7 +104,7 @@ namespace ChatAttrapeSouris
                 // Le nom standard pour les autres
                 prefixeFichier = "cat_";
             }
-            // --------------------
+          
 
 
             // Initialisation du tableau (pour 3 images d'animation)
@@ -162,12 +159,12 @@ namespace ChatAttrapeSouris
                 vitesseSaut -= GRAVITE;
 
                
-                double maxJumpHeight = 250; // Hauteur maximale du saut
-                if (positionActuelle > maxJumpHeight)
-                {
-                    positionActuelle = maxJumpHeight;
-                    vitesseSaut = 0; 
-                }
+                //double maxJumpHeight = 250; // Hauteur maximale du saut
+                //if (positionActuelle > maxJumpHeight)
+                //{
+                //    positionActuelle = maxJumpHeight;
+                //    vitesseSaut = 0; 
+                //}
 
                 Canvas.SetBottom(imgPerso, positionActuelle);
 
@@ -249,10 +246,10 @@ namespace ChatAttrapeSouris
         private void Jeu(object? sender, EventArgs e)
         {
             // Déplacement du décor
-            Deplace(Fond1, 2);
-            Deplace(Fond2, 2);
-            Deplace(buisson, 2);
-            Deplace(box, 2);
+            Deplace(Fond1, 5);
+            Deplace(Fond2, 5);
+            Deplace(buisson, 5);
+            Deplace(box, 5);
 
             // APPELER la méthode de gestion du saut
             GererSaut();
@@ -278,6 +275,22 @@ namespace ChatAttrapeSouris
                     nbTours = 0;
                 }
             }
+            if (Canvas.GetBottom(imgPerso) > Canvas.GetBottom(box) + box.ActualHeight && Canvas.GetLeft(imgPerso) > Canvas.GetLeft(box) + box.ActualWidth)
+            {
+                MainWindow.Score += 1;
+                MettreAJourAffichage();
+            }
+                
+            if (Canvas.GetBottom(imgPerso) > Canvas.GetBottom(buisson) + buisson.ActualHeight && Canvas.GetLeft(imgPerso) > Canvas.GetLeft(buisson) + buisson.ActualWidth)
+            {
+                MainWindow.Score += 1;
+                MettreAJourAffichage();
+            }
+                
+        }
+        private void MettreAJourAffichage()
+        {
+            labScore.Content = "Score : " + MainWindow.Score.ToString();
         }
 
         private void menuParametre_Click(object sender, RoutedEventArgs e)
@@ -310,7 +323,7 @@ namespace ChatAttrapeSouris
             {
                 enSaut = true;
                 
-                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? 40 : 25; // Saut plus haut si la touche est maintenue
+                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? 20 : 15; // Saut plus haut si la touche est maintenue
                 vitesseSaut = FORCE_SAUT; 
             }
         }

@@ -33,7 +33,8 @@
              IsSnapToTickEnabled="True"
              TickPlacement="BottomRight"
              AutoToolTipPlacement="BottomRight"
-             HorizontalAlignment="Center" Margin="0,90,0,305" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFF8100" Height="40"/>
+             HorizontalAlignment="Center" Margin="0,90,0,305" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFF8100" Height="40"/>
+
             <Slider x:Name="slidVitesse"  Width="125" Minimum="1"
              Maximum="3"
              Value="2"
@@ -41,7 +42,8 @@
              IsSnapToTickEnabled="True"
              TickPlacement="BottomRight"
              AutoToolTipPlacement="BottomRight"
-             HorizontalAlignment="Center" Margin="0,239,0,156" Foreground="#FF000FFF" Height="40"/>
+             HorizontalAlignment="Center" Margin="0,239,0,156" Foreground="#FF000FFF" Height="40"/>
+
 
         </Grid>
    
