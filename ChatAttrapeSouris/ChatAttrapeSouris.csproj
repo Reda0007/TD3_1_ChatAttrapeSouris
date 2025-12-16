@@ -73,13 +73,10 @@
     <Resource Include="fonds\fond6.png" />
     <Resource Include="fonds\fondP.jpg" />
     <Resource Include="fonds\mouseFond.jpg" />
-    <Resource Include="IMAGES\box.png" />
-    <Resource Include="IMAGES\bricked_bushes.png" />
-    <Resource Include="IMAGES\fish1.png" />
-    <Resource Include="IMAGES\fish2.png" />
-    <Resource Include="IMAGES\fish3.png" />
-    <Resource Include="IMAGES\imageFondUC.jpg" />
-    <Resource Include="IMAGES\mouse.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IMAGES\" />
   </ItemGroup>
 
 </Project>
