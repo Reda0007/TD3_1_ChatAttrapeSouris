@@ -1,4 +1,5 @@
-﻿using System.Security.Policy;
+﻿using System.Media;
+using System.Security.Policy;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,7 @@ namespace ChatAttrapeSouris
     {
         public static double vitesse;
         public static double son;
+        public static SoundPlayer Son;
         public static int Score = 0;
         public static string Perso { get; set; }
 
@@ -27,6 +29,7 @@ namespace ChatAttrapeSouris
             InitializeComponent();
             AfficheMenu();
             InitMusique();
+            InitSon();
 
         }
 
@@ -106,6 +109,11 @@ namespace ChatAttrapeSouris
             musique.Position = TimeSpan.Zero;
             musique.Play();
 
+        }
+
+        private void InitSon()
+        {
+            Son = new SoundPlayer(Application.GetResourceStream(new Uri("pack://application:,,,/ASSETS/Bruit_mort.wav.wav")).Stream);
         }
     }
 }

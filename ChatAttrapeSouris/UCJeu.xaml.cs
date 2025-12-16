@@ -27,7 +27,7 @@ namespace ChatAttrapeSouris
         private bool enSaut = false;
         private double vitesseSaut = 0;
         private double positionSolY; // Position Y du sol
-        private double FORCE_SAUT=10;
+        private double FORCE_SAUT=8;
         private double GRAVITE=0.6;
         private bool SautScore = true;
 
@@ -164,9 +164,11 @@ namespace ChatAttrapeSouris
         }
         private void FinDuJeu()
         {
+            MainWindow.Son.Play();
             minuterie.Stop();
             MessageBox.Show("Game Over ! Vous avez touché un obstacle.", "Fin du jeu");
             MainWindow.Score = 0;
+
 
             // Retourner au menu
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
@@ -176,7 +178,7 @@ namespace ChatAttrapeSouris
         private void Jeu(object? sender, EventArgs e)
         {
             // Déplacement du décor
-            Deplace(Fond1, 5 );
+            Deplace(Fond1, 5);
             Deplace(Fond2, 5);
             Deplace(buisson, 5);
             Deplace(box, 5);
@@ -266,8 +268,8 @@ namespace ChatAttrapeSouris
             {
                 enSaut = true;
                 
-                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? 20 : 15; // Saut plus haut si la touche est maintenue
-                vitesseSaut = FORCE_SAUT; 
+                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? 18 : 13; // Saut plus haut si la touche est maintenue
+                vitesseSaut = FORCE_SAUT;
             }
         }
 
