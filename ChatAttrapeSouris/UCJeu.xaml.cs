@@ -41,7 +41,6 @@ namespace ChatAttrapeSouris
             {
                 MainGrid.Focus();
             };
-
             InitializeImages();
             InitializeTimer();
             BoxPosition();
@@ -54,7 +53,23 @@ namespace ChatAttrapeSouris
                 Canvas.SetBottom(imgPerso, positionSolY);
             }
 
-            
+            if (Collision(imgPerso, box) == true)
+            {
+                FinDuJeu();
+            }
+            if (Collision(imgPerso, buisson) == true)
+            {
+                FinDuJeu();
+            }
+
+        }
+
+        public static bool Collision(Image img1, Image img2)
+        {
+            if ((Canvas.GetLeft(img1) + img1.ActualWidth > Canvas.GetLeft(img2) && Canvas.GetLeft(img2) + img2.ActualWidth > Canvas.GetLeft(img1)) && (Canvas.GetBottom(img1) + img1.ActualHeight > Canvas.GetBottom(img2) && Canvas.GetBottom(img2) + img2.ActualHeight > (Canvas.GetBottom(img1))))
+                return true;
+            return false;
+
         }
 
         private void BoxPosition()
@@ -128,29 +143,6 @@ namespace ChatAttrapeSouris
             }
         }
 
-            //    if (MainWindow.Perso == "ChatBlanc")
-            //    {
-            //        // cat_07, cat_08, cat_09
-            //        spritesActuels = new BitmapImage[3];
-            //        for (int i = 0; i < spritesActuels.Length; i++)
-            //        {
-            //            spritesActuels[i] = new BitmapImage(
-            //                new Uri($"pack://application:,,,/cats/cat_blanc_0{1 + i}.png"));
-            //        }
-            //    }
-            //    else if (MainWindow.Perso == "ChatJaune")
-            //    {
-
-            //        spritesActuels = new BitmapImage[3];
-            //        for (int i = 0; i < spritesActuels.Length; i++)
-            //        {
-            //            spritesActuels[i] = new BitmapImage(
-            //                new Uri($"pack://application:,,,/cats/cat_0{1 + i}.png"));
-            //        }
-            //    }
-
-
-            //    imgPerso.Source = spritesActuels[0];
         
 
         public void Deplace(Image image, int pas)
@@ -221,27 +213,27 @@ namespace ChatAttrapeSouris
         //}
 
         // NOUVELLE MÉTHODE : Détecter collision
-        private bool DetecterCollision(Image objet1, Image objet2)
-        {
-            double left1 = Canvas.GetLeft(objet1);
-            double bottom1 = Canvas.GetBottom(objet1);
+        //private bool DetecterCollision(Image objet1, Image objet2)
+        //{
+        //    double left1 = Canvas.GetLeft(objet1);
+        //    double bottom1 = Canvas.GetBottom(objet1);
 
-            double left2 = Canvas.GetLeft(objet2);
-            double bottom2 = Canvas.GetBottom(objet2);
+        //    double left2 = Canvas.GetLeft(objet2);
+        //    double bottom2 = Canvas.GetBottom(objet2);
 
-            // Calculer les rectangles de collision
-            double right1 = left1 + objet1.ActualWidth;
-            double top1 = bottom1 + objet1.ActualHeight;
+        //    // Calculer les rectangles de collision
+        //    double right1 = left1 + objet1.ActualWidth;
+        //    double top1 = bottom1 + objet1.ActualHeight;
 
-            double right2 = left2 + objet2.ActualWidth;
-            double top2 = bottom2 + objet2.ActualHeight;
+        //    double right2 = left2 + objet2.ActualWidth;
+        //    double top2 = bottom2 + objet2.ActualHeight;
 
-            // Vérifier le chevauchement
-            bool collisionX = left1 < right2 && right1 > left2;
-            bool collisionY = bottom1 < top2 && top1 > bottom2;
+        //    // Vérifier le chevauchement
+        //    bool collisionX = left1 < right2 && right1 > left2;
+        //    bool collisionY = bottom1 < top2 && top1 > bottom2;
 
-            return collisionX && collisionY;
-        }
+        //    return collisionX && collisionY;
+        //}
 
         // NOUVELLE MÉTHODE : Fin du jeu
         private void FinDuJeu()
@@ -266,7 +258,7 @@ namespace ChatAttrapeSouris
             GererSaut();
 
             // VÉRIFIER la collision avec l'obstacle
-            if (DetecterCollision(imgPerso, box))
+            if (Collision(imgPerso, box))
             {
                 FinDuJeu();
                 return; // Arrêter le traitement
