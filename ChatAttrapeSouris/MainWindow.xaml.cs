@@ -106,7 +106,21 @@ namespace ChatAttrapeSouris
         //    ZoneJeu.Content = uc;
         //    uc.ButtonRejouer.Click += AfficheJeu;
         //    uc.ButtonMenu.Click += AfficheDebutDuJeu;
+        private static MediaPlayer musique;
+        private void InitMusique()
+        {
+            musique = new MediaPlayer();
+            musique.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "ASSETS/Music_chat.mp3"));
+            musique.MediaEnded += RelanceMusique;
+            musique.Volume = 0.5;
+            musique.Play();
+        }
 
+        private void RelanceMusique(object? sender, EventArgs e)
+        {
+            musique.Position = TimeSpan.Zero;
+            musique.Play();
 
+        }
     }
-    }
+}

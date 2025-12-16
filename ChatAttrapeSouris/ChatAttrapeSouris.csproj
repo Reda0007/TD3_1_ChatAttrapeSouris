@@ -72,4 +72,10 @@
     <Resource Include="IMAGES\bricked_bushes.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ASSETS\Music_chat.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
