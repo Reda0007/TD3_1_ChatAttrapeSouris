@@ -26,26 +26,27 @@ namespace ChatAttrapeSouris
         {
             InitializeComponent();
             AfficheMenu();
+            InitMusique();
 
         }
 
-       // private void Window_KeyDown(object sender, KeyEventArgs e)
+        // private void Window_KeyDown(object sender, KeyEventArgs e)
         //{
-            // Transmettre l'événement au UCJeu s'il est actif
-             //if (ZoneJeu.Content is UCJeu jeu)
-            //
-               // jeu.GererKeyDown(e);
-            //}
+        // Transmettre l'événement au UCJeu s'il est actif
+        //if (ZoneJeu.Content is UCJeu jeu)
+        //
+        // jeu.GererKeyDown(e);
+        //}
         //}
 
-       //private void Window_KeyUp(object sender, KeyEventArgs e)
+        //private void Window_KeyUp(object sender, KeyEventArgs e)
         //{
-            // Transmettre l'événement au UCJeu s'il est actif
-           // if (ZoneJeu.Content is UCJeu jeu)
-           // {
-           //     jeu.GererKeyUp(e);
-          //  }
-       // }
+        // Transmettre l'événement au UCJeu s'il est actif
+        // if (ZoneJeu.Content is UCJeu jeu)
+        // {
+        //     jeu.GererKeyUp(e);
+        //  }
+        // }
 
 
         public void AfficheMenu()
