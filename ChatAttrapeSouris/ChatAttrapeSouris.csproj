@@ -43,9 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="cats\cat_01.png" />
-    <Resource Include="cats\cat_02.png" />
-    <Resource Include="cats\cat_03.png" />
     <Resource Include="cats\cat_04.png" />
     <Resource Include="cats\cat_05.png" />
     <Resource Include="cats\cat_06.png" />
