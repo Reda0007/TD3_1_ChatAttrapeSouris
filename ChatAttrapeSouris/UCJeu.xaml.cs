@@ -42,25 +42,7 @@ namespace ChatAttrapeSouris
             {
                 MainGrid.Focus();
             };
-            double niveau = MainWindow.vitesse;
-            if (niveau == 0) // NIVEAU FACILE (Slider à gauche)
-            {
-                vitesseDefilement = 5;  // Le décor bouge lentement
-                SautMax = 18;           // Le chat saute très haut
-                SautMin = 13;
-            }
-            else if (niveau == 1) // NIVEAU MOYEN (Slider au milieu)
-            {
-                vitesseDefilement = 8;  // Vitesse modérée
-                SautMax = 16;           // Saut normal
-                SautMin = 11;
-            }
-            else // NIVEAU DIFFICILE (Slider à droite, niveau == 2)
-            {
-                vitesseDefilement = 12; // Très rapide !
-                SautMax = 14;           // Saut petit (nécessite réflexes)
-                SautMin = 10;
-            }
+            MettreAjourDifficulte();
             InitializeImages();
             InitializeTimer();
             BoxPosition();
@@ -73,17 +55,36 @@ namespace ChatAttrapeSouris
                 Canvas.SetBottom(imgPerso, positionSolY);
             }
 
-            if (Collision(imgPerso, box) == true)
+            if ((Collision(imgPerso, box) == true) || (Collision(imgPerso, buisson) == true))
             {
                 FinDuJeu();
             }
-            if (Collision(imgPerso, buisson) == true)
-            {
-                FinDuJeu();
-                
-            }
-
         }
+
+        private void MettreAjourDifficulte()
+        {
+            double niveau = MainWindow.vitesse;
+            if (niveau == 0) // NIVEAU FACILE (Slider à gauche)
+            {
+                vitesseDefilement = 5;  // Le décor bouge lentement
+                SautMax = 18;           // Le chat saute très haut
+                SautMin = 13;
+            }
+            // changé les valeurs !!!!!!!
+            else if (niveau == 1) // NIVEAU MOYEN (Slider au milieu)
+            {
+                vitesseDefilement = 6;  // Vitesse modérée
+                SautMax = 16;           // Saut normal
+                SautMin = 11;
+            }
+            else // NIVEAU DIFFICILE (Slider à droite, niveau == 2)
+            {
+                vitesseDefilement = 8; // Très rapide !
+                SautMax = 14;           // Saut petit (nécessite réflexes)
+                SautMin = 10;
+            }
+        }
+
         public static bool Collision(Image img1, Image img2)
         {
             if ((Canvas.GetLeft(img1) + img1.ActualWidth > Canvas.GetLeft(img2) && Canvas.GetLeft(img2) + img2.ActualWidth > Canvas.GetLeft(img1)) && (Canvas.GetBottom(img1) + img1.ActualHeight > Canvas.GetBottom(img2) && Canvas.GetBottom(img2) + img2.ActualHeight > (Canvas.GetBottom(img1))))
@@ -268,7 +269,11 @@ namespace ChatAttrapeSouris
 
             // Relancer le timer si l'utilisateur n'a pas quitté
             if (rep == true)
+            {
+                MettreAjourDifficulte();
                 minuterie.Start();
+            }
+                
         }
 
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
