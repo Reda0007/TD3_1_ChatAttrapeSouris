@@ -28,6 +28,7 @@ namespace ChatAttrapeSouris
 
         private void ButtonConfirmer_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.vitesse = this.slidVitesse.Value;
             DialogResult = true;
         }
 

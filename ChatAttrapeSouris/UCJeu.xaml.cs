@@ -27,9 +27,12 @@ namespace ChatAttrapeSouris
         private bool enSaut = false;
         private double vitesseSaut = 0;
         private double positionSolY; // Position Y du sol
-        private double FORCE_SAUT=8;
+        private double FORCE_SAUT;
         private double GRAVITE=0.6;
         private bool SautScore = true;
+        private double vitesseDefilement;
+        private double SautMax;
+        private double SautMin;
 
         public UCJeu()
         {
@@ -39,10 +42,29 @@ namespace ChatAttrapeSouris
             {
                 MainGrid.Focus();
             };
+            double niveau = MainWindow.vitesse;
+            if (niveau == 0) // NIVEAU FACILE (Slider à gauche)
+            {
+                vitesseDefilement = 5;  // Le décor bouge lentement
+                SautMax = 18;           // Le chat saute très haut
+                SautMin = 13;
+            }
+            else if (niveau == 1) // NIVEAU MOYEN (Slider au milieu)
+            {
+                vitesseDefilement = 8;  // Vitesse modérée
+                SautMax = 16;           // Saut normal
+                SautMin = 11;
+            }
+            else // NIVEAU DIFFICILE (Slider à droite, niveau == 2)
+            {
+                vitesseDefilement = 12; // Très rapide !
+                SautMax = 14;           // Saut petit (nécessite réflexes)
+                SautMin = 10;
+            }
             InitializeImages();
             InitializeTimer();
             BoxPosition();
-
+            
             // IMPORTANT : Initialiser positionSolY AVANT InitializeTimer
             positionSolY = Canvas.GetBottom(imgPerso);
             if (double.IsNaN(positionSolY))
@@ -178,10 +200,10 @@ namespace ChatAttrapeSouris
         private void Jeu(object? sender, EventArgs e)
         {
             // Déplacement du décor
-            Deplace(Fond1, 5);
-            Deplace(Fond2, 5);
-            Deplace(buisson, 5);
-            Deplace(box, 5);
+            Deplace(Fond1, (int)vitesseDefilement);
+            Deplace(Fond2, (int)vitesseDefilement);
+            Deplace(buisson, (int)vitesseDefilement);
+            Deplace(box, (int)vitesseDefilement);
 
             // APPELER la méthode de gestion du saut
             GererSaut();
@@ -268,7 +290,7 @@ namespace ChatAttrapeSouris
             {
                 enSaut = true;
                 
-                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? 18 : 13; // Saut plus haut si la touche est maintenue
+                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? SautMax : SautMin; // Saut plus haut si la touche est maintenue
                 vitesseSaut = FORCE_SAUT;
             }
         }
