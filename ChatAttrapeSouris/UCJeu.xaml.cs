@@ -77,30 +77,81 @@ namespace ChatAttrapeSouris
 
         private void InitializeImages()
         {
+            // --- CONFIGURATION ---
+            string prefixeFichier = "";
+            // On commence toujours à 1 pour le blanc (01, 02, 03) et le jaune (01, 02, 03)
+            int numeroDepart = 1;
+
             if (MainWindow.Perso == "ChatBlanc")
             {
-                // cat_07, cat_08, cat_09
-                spritesActuels = new BitmapImage[3];
-                for (int i = 0; i < spritesActuels.Length; i++)
-                {
-                    spritesActuels[i] = new BitmapImage(
-                        new Uri($"pack://application:,,,/cats/cat_blanc_0{1 + i}.png"));
-                }
+                // C'EST ICI QUE ÇA SE JOUAIT : Le nom spécifique pour le blanc
+                prefixeFichier = "cat_blanc_";
             }
-            else if (MainWindow.Perso == "ChatJaune")
+            else // Par défaut (ChatJaune)
             {
-                
-                spritesActuels = new BitmapImage[3];
-                for (int i = 0; i < spritesActuels.Length; i++)
+                // Le nom standard pour les autres
+                prefixeFichier = "cat_";
+            }
+            // --------------------
+
+
+            // Initialisation du tableau (pour 3 images d'animation)
+            spritesActuels = new BitmapImage[3];
+
+            // Boucle de chargement
+            for (int i = 0; i < spritesActuels.Length; i++)
+            {
+                // Calcul du numéro : 1 + 0 = 1, puis 2, puis 3.
+                int numeroImage = numeroDepart + i;
+
+                // Construction du chemin final.
+                // "D2" force l'écriture avec deux chiffres (ex: "01" au lieu de "1")
+                // Cela donnera : pack://application:,,,/cats/cat_blanc_01.png
+                string cheminImage = $"pack://application:,,,/cats/{prefixeFichier}{numeroImage:D2}.png";
+
+                try
                 {
-                    spritesActuels[i] = new BitmapImage(
-                        new Uri($"pack://application:,,,/cats/cat_0{1 + i}.png"));
+                    spritesActuels[i] = new BitmapImage(new Uri(cheminImage));
+                    Console.WriteLine($"Image chargée avec succès : {cheminImage}");
+                }
+                catch (Exception ex)
+                {
+                    // Ajoute ce message pour voir si le chemin est faux dans la console de sortie
+                    Console.WriteLine($"ERREUR : Impossible de trouver l'image : {cheminImage}. Erreur : {ex.Message}");
                 }
             }
 
-            
-            imgPerso.Source = spritesActuels[0];
+            // Appliquer la première image au controle WPF
+            if (spritesActuels[0] != null && imgPerso != null)
+            {
+                imgPerso.Source = spritesActuels[0];
+            }
         }
+
+            //    if (MainWindow.Perso == "ChatBlanc")
+            //    {
+            //        // cat_07, cat_08, cat_09
+            //        spritesActuels = new BitmapImage[3];
+            //        for (int i = 0; i < spritesActuels.Length; i++)
+            //        {
+            //            spritesActuels[i] = new BitmapImage(
+            //                new Uri($"pack://application:,,,/cats/cat_blanc_0{1 + i}.png"));
+            //        }
+            //    }
+            //    else if (MainWindow.Perso == "ChatJaune")
+            //    {
+
+            //        spritesActuels = new BitmapImage[3];
+            //        for (int i = 0; i < spritesActuels.Length; i++)
+            //        {
+            //            spritesActuels[i] = new BitmapImage(
+            //                new Uri($"pack://application:,,,/cats/cat_0{1 + i}.png"));
+            //        }
+            //    }
+
+
+            //    imgPerso.Source = spritesActuels[0];
+        
 
         public void Deplace(Image image, int pas)
         {
