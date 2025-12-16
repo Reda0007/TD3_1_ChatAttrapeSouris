@@ -6,31 +6,33 @@
              xmlns:local="clr-namespace:ChatAttrapeSouris"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/fonds/fondP.jpg"/>
-        </Grid.Background>
+    <Viewbox Stretch="Uniform">
+        <Grid Width="800" Height="450">
+            <Grid.Background>
+                <ImageBrush ImageSource="/fonds/fondP.jpg"/>
+            </Grid.Background>
 
-        <TextBlock HorizontalAlignment="Left" Margin="119,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="555" FontFamily="Bahnschrift SemiBold" FontSize="20" FontWeight="Bold" Background="#FFE8D161"><Run Text="Le joueur contrôle un chat qui doit attraper une souris rapide"/><LineBreak/><Run Text="&#xD;&#xA;"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="119,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="555" FontSize="20" Foreground="Black" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" Background="#FFE8D161"><Run FontFamily="Bahnschrift SemiBold" FontSize="20" Text="Le chat dispose d’un temps limité pour réussir"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="119,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="555" FontSize="20" Foreground="Black" FontWeight="Bold" Background="#FFE8D161" TextAlignment="Justify"><Run FontFamily="Bahnschrift SemiBold" FontSize="20" Text="Le jeu devient plus difficile -&gt; la souris va lus vite en fonction de niveau choisie, des obstacles apparaissent ainsi que des bonus"/></TextBlock>
-        <Button x:Name="ButtonRetour" Content="Retour" HorizontalAlignment="Left" Margin="650,358,0,0" VerticalAlignment="Top" Height="30" Width="85" BorderBrush="Black" FontSize="18" FontFamily="Algerian">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD88A02"/>
-                    <GradientStop Color="#FF5F2801" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="47,39,0,0" TextWrapping="Wrap" Text="Regles du jeu" VerticalAlignment="Top" Width="270" Height="50" FontSize="36" FontFamily="Algerian" TextAlignment="Center" Foreground="Black">
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFDB9003" Offset="0.219"/>
-                    <GradientStop Color="#FF86D6EF" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Background>
-        </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="119,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="555" FontFamily="Bahnschrift SemiBold" FontSize="20" FontWeight="Bold" Background="#FFE8D161"><Run Text="Le joueur contrôle un chat qui doit attraper une souris rapide"/><LineBreak/><Run Text="&#xD;&#xA;"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="119,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="555" FontSize="20" Foreground="Black" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" Background="#FFE8D161"><Run FontFamily="Bahnschrift SemiBold" FontSize="20" Text="Le chat dispose d’un temps limité pour réussir"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="119,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="555" FontSize="20" Foreground="Black" FontWeight="Bold" Background="#FFE8D161" TextAlignment="Justify"><Run FontFamily="Bahnschrift SemiBold" FontSize="20" Text="Le jeu devient plus difficile -&gt; la souris va lus vite en fonction de niveau choisie, des obstacles apparaissent ainsi que des bonus"/></TextBlock>
+            <Button x:Name="ButtonRetour" Content="Retour" HorizontalAlignment="Left" Margin="650,358,0,0" VerticalAlignment="Top" Height="30" Width="85" BorderBrush="Black" FontSize="18" FontFamily="Algerian">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD88A02"/>
+                        <GradientStop Color="#FF5F2801" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock HorizontalAlignment="Left" Margin="47,39,0,0" TextWrapping="Wrap" Text="Regles du jeu" VerticalAlignment="Top" Width="270" Height="50" FontSize="36" FontFamily="Algerian" TextAlignment="Center" Foreground="Black">
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFDB9003" Offset="0.219"/>
+                        <GradientStop Color="#FF86D6EF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
 
 
-    </Grid>
+        </Grid>
+    </Viewbox>
 </UserControl>

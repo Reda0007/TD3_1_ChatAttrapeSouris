@@ -24,18 +24,24 @@ namespace ChatAttrapeSouris
         public static BitmapImage[] persos = new BitmapImage[3];
         private int nb = 0;
         private int nbTours;
-        private bool saut = false;
+        private BitmapImage[] spritesActuels;
         private bool enSaut = false;
         private double vitesseSaut = 0;
         private double gravite = 0.5;
         private double positionSolY; // Position Y du sol
-        private double FORCE_SAUT;
-        private double GRAVITE;
+        private double FORCE_SAUT=22;
+        private double GRAVITE=0.1;
 
 
         public UCJeu()
         {
             InitializeComponent();
+            
+            this.Loaded += (s, e) =>
+            {
+                MainGrid.Focus();
+            };
+
             InitializeImages();
             InitializeTimer();
             BoxPosition();
@@ -48,24 +54,21 @@ namespace ChatAttrapeSouris
                 Canvas.SetBottom(imgPerso, positionSolY);
             }
 
-            InitializeTimer();
+            
         }
 
         private void BoxPosition()
         {
-            throw new NotImplementedException();
+            positionbox = 800;
+            Canvas.SetLeft(box, positionbox);
         }
 
-        public void GererKeyUp(KeyEventArgs e)
-        {
-            if (e.Key == Key.Space)
-                saut = false;
-        }
+        
+        
 
         private void InitializeTimer()
         {
-            positionbox = 800;
-            Canvas.SetLeft(box, positionbox);
+            
             minuterie = new DispatcherTimer();
             minuterie.Interval = TimeSpan.FromMilliseconds(16);
             minuterie.Tick += Jeu;
@@ -74,8 +77,29 @@ namespace ChatAttrapeSouris
 
         private void InitializeImages()
         {
-            for (int i = 0; i < persos.Length; i++)
-                persos[i] = new BitmapImage(new Uri($"pack://application:,,,/cats/cat_0{i + 1}.png"));
+            if (MainWindow.Perso == "ChatBlanc")
+            {
+                // cat_07, cat_08, cat_09
+                spritesActuels = new BitmapImage[3];
+                for (int i = 0; i < spritesActuels.Length; i++)
+                {
+                    spritesActuels[i] = new BitmapImage(
+                        new Uri($"pack://application:,,,/cats/cat_blanc_0{1 + i}.png"));
+                }
+            }
+            else if (MainWindow.Perso == "ChatJaune")
+            {
+                
+                spritesActuels = new BitmapImage[3];
+                for (int i = 0; i < spritesActuels.Length; i++)
+                {
+                    spritesActuels[i] = new BitmapImage(
+                        new Uri($"pack://application:,,,/cats/cat_0{1 + i}.png"));
+                }
+            }
+
+            
+            imgPerso.Source = spritesActuels[0];
         }
 
         public void Deplace(Image image, int pas)
@@ -85,27 +109,25 @@ namespace ChatAttrapeSouris
             if (Canvas.GetLeft(image) + image.ActualWidth <= 0)
                 Canvas.SetLeft(image, this.ActualWidth);
         }
-
-        // NOUVELLE MÉTHODE : Gérer le saut avec gravité
         private void GererSaut()
         {
-            // Démarrer le saut siespace est pressé et qu'on n'est pas déjà en train de sauter
-            if (saut && !enSaut)
-            {
-                enSaut = true;
-                vitesseSaut = FORCE_SAUT;
-            }
-
-            // Si on est en train de sauter
             if (enSaut)
             {
-                double positionActuelle = Canvas.GetBottom(imgPerso);
-                positionActuelle += vitesseSaut;
-                vitesseSaut -= GRAVITE; // La gravité ralentit puis inverse le saut
+                double positionActuelle = Canvas.GetBottom(imgPerso);  
+
+                positionActuelle += vitesseSaut; 
+                vitesseSaut -= GRAVITE;
+
+               
+                double maxJumpHeight = 250; // Hauteur maximale du saut
+                if (positionActuelle > maxJumpHeight)
+                {
+                    positionActuelle = maxJumpHeight;
+                    vitesseSaut = 0; 
+                }
 
                 Canvas.SetBottom(imgPerso, positionActuelle);
 
-                // Vérifier si on retombe au sol
                 if (positionActuelle <= positionSolY)
                 {
                     Canvas.SetBottom(imgPerso, positionSolY);
@@ -114,6 +136,38 @@ namespace ChatAttrapeSouris
                 }
             }
         }
+
+
+
+        // NOUVELLE MÉTHODE : Gérer le saut avec gravité
+        //private void GererSaut()
+        //{
+
+        // Démarrer le saut siespace est pressé et qu'on n'est pas déjà en train de sauter
+        //if (saut && !enSaut)
+        //{
+        //     enSaut = true;
+        //     vitesseSaut = FORCE_SAUT;
+        // }
+
+        // Si on est en train de sauter
+        // if (enSaut)
+        // {
+        //    double positionActuelle = Canvas.GetBottom(imgPerso);
+        //      positionActuelle += vitesseSaut;
+        //     vitesseSaut -= GRAVITE; // La gravité ralentit puis inverse le saut
+
+        //      Canvas.SetBottom(imgPerso, positionActuelle);
+
+        // Vérifier si on retombe au sol
+        //      if (positionActuelle <= positionSolY)
+        //      {
+        //           Canvas.SetBottom(imgPerso, positionSolY);
+        //           enSaut = false;
+        //           vitesseSaut = 0;
+        // }
+        //  }
+        //}
 
         // NOUVELLE MÉTHODE : Détecter collision
         private bool DetecterCollision(Image objet1, Image objet2)
@@ -174,10 +228,10 @@ namespace ChatAttrapeSouris
                 if (nbTours == 4)
                 {
                     nb++;
-                    if (nb == persos.Length)
+                    if (nb == spritesActuels.Length)
                         nb = 0;
 
-                    imgPerso.Source = persos[nb];
+                    imgPerso.Source = spritesActuels[nb];
                     nbTours = 0;
                 }
             }
@@ -205,20 +259,19 @@ namespace ChatAttrapeSouris
                 minuterie.Start();
         }
 
-        private void MainGrid_KeyUp(object sender, KeyEventArgs e)
-        {
-            Application.Current.MainWindow.KeyDown += MainGrid_KeyDown; // Associer l'événement KeyDown
-        }
+        
 
         private void MainGrid_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.Key == Key.Space && !enSaut)
             {
                 enSaut = true;
-                vitesseSaut = 20;
+                
+                FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? 40 : 25; // Saut plus haut si la touche est maintenue
+                vitesseSaut = FORCE_SAUT; 
             }
         }
+
 
 
 

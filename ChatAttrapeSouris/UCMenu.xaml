@@ -4,25 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ChatAttrapeSouris"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Canvas>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="490" Height="60" TextAlignment="Center" FontSize="44" FontFamily="Algerian" FontWeight="Bold" Canvas.Left="155" Canvas.Top="111">
-            <TextBlock.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5FB6F9"/>
-                    <GradientStop Color="#FFA5E6E8" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Background><Run Language="fr-fr" Text="INFINITE RUNNER"/></TextBlock>
-        <Button x:Name="ButtonMenu" Content="Menu" Canvas.Left="352" Canvas.Top="295" Width="96" Height="30" FontFamily="Algerian" FontSize="20" BorderBrush="#FF80CFF0" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF4F6269"/>
-                    <GradientStop Color="#FF7E6B0C" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Image Height="100" Canvas.Left="285" Source="/fonds/catFond.png" Stretch="Fill" Canvas.Top="225" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+             mc:Ignorable="d">
+    <Viewbox Stretch="Uniform">
+        <Grid Background="Transparent" Width="800" Height="450">
+            <Button x:Name="ButtonMenu" Content="Menu"
+                    Width="120" Height="40" FontSize="20" FontFamily="Algerian"
+                    HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,281,0,0"
+                    BorderBrush="#FF80CFF0">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4F6269"/>
+                        <GradientStop Color="#FF7E6B0C" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock Text="INFINITE RUNNER"
+                       FontSize="44" FontFamily="Algerian"
+                       FontWeight="Bold" TextAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" Width="420" Height="60">
+                <TextBlock.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5FB6F9"/>
+                        <GradientStop Color="#FFA5E6E8" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
 
-    </Canvas>
+            <Image Source="/fonds/catFond.png"
+                   Width="90" Height="100"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,226,0,0"/>
+        </Grid>
+    </Viewbox>
+
 </UserControl>
