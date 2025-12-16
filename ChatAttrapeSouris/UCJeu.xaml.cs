@@ -78,7 +78,7 @@ namespace ChatAttrapeSouris
         private void InitializeImages()
         {
             // --- CONFIGURATION ---
-            string prefixeFichier = "";
+            string prefixeFichier = " ";
             // On commence toujours à 1 pour le blanc (01, 02, 03) et le jaune (01, 02, 03)
             int numeroDepart = 1;
 
