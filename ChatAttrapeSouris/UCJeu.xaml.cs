@@ -37,12 +37,8 @@ namespace ChatAttrapeSouris
         public UCJeu()
         {
             MainWindow.Score = 0;
-            InitializeComponent();
-            
-            this.Loaded += (s, e) =>
-            {
-                MainGrid.Focus();
-            };
+            InitializeComponent();            
+            this.Loaded += (s, e) =>{MainGrid.Focus();};
             MettreAjourDifficulte();
             InitializeImages();
             InitializeTimer();
@@ -61,7 +57,6 @@ namespace ChatAttrapeSouris
                 FinDuJeu();
             }
         }
-
         private void MettreAjourDifficulte()
         {
             double niveau = MainWindow.vitesse;
@@ -85,13 +80,11 @@ namespace ChatAttrapeSouris
                 SautMin = 10;
             }
         }
-
         public static bool Collision(Image img1, Image img2)
         {
             if ((Canvas.GetLeft(img1) + img1.ActualWidth > Canvas.GetLeft(img2) && Canvas.GetLeft(img2) + img2.ActualWidth > Canvas.GetLeft(img1)) && (Canvas.GetBottom(img1) + img1.ActualHeight > Canvas.GetBottom(img2) && Canvas.GetBottom(img2) + img2.ActualHeight > (Canvas.GetBottom(img1))))
                 return true;
             return false;
-
         }
 
         private void BoxPosition()
@@ -100,8 +93,7 @@ namespace ChatAttrapeSouris
             Canvas.SetLeft(box, positionbox);
         }
         private void InitializeTimer()
-        {
-            
+        {          
             minuterie = new DispatcherTimer();
             minuterie.Interval = TimeSpan.FromMilliseconds(16);
             minuterie.Tick += Jeu;
@@ -114,7 +106,6 @@ namespace ChatAttrapeSouris
             string prefixeFichier = " ";
             // On commence toujours à 1 pour le blanc (01, 02, 03) et le jaune (01, 02, 03)
             int numeroDepart = 1;
-
             if (MainWindow.Perso == "ChatBlanc")
             {
                 // C'EST ICI QUE ÇA SE JOUAIT : Le nom spécifique pour le blanc
@@ -124,13 +115,9 @@ namespace ChatAttrapeSouris
             {
                 // Le nom standard pour les autres
                 prefixeFichier = "cat_";
-            }
-          
-
-
+            }        
             // Initialisation du tableau (pour 3 images d'animation)
             spritesActuels = new BitmapImage[3];
-
             // Boucle de chargement
             for (int i = 0; i < spritesActuels.Length; i++)
             {
@@ -141,7 +128,6 @@ namespace ChatAttrapeSouris
                 // "D2" force l'écriture avec deux chiffres (ex: "01" au lieu de "1")
                 // Cela donnera : pack://application:,,,/cats/cat_blanc_01.png
                 string cheminImage = $"pack://application:,,,/cats/{prefixeFichier}{numeroImage:D2}.png";
-
                 try
                 {
                     spritesActuels[i] = new BitmapImage(new Uri(cheminImage));
@@ -153,7 +139,6 @@ namespace ChatAttrapeSouris
                     Console.WriteLine($"ERREUR : Impossible de trouver l'image : {cheminImage}. Erreur : {ex.Message}");
                 }
             }
-
             // Appliquer la première image au controle WPF
             if (spritesActuels[0] != null && imgPerso != null)
             {
@@ -257,11 +242,11 @@ namespace ChatAttrapeSouris
             Console.WriteLine("saut score" + SautScore);    
 
         }
+        // mettre a jour Score
         private void MettreAJourAffichage()
         {
             labScore.Content = "Score : " + MainWindow.Score.ToString();
         }
-
         private void menuParametre_Click(object sender, RoutedEventArgs e)
         {
             minuterie.Stop();
@@ -276,7 +261,6 @@ namespace ChatAttrapeSouris
             }
                 
         }
-
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
         {
             minuterie.Stop();
@@ -286,10 +270,7 @@ namespace ChatAttrapeSouris
             // Relancer le timer si l'utilisateur continue
             if (rep == false) // false = annuler = continuer
                 minuterie.Start();
-        }
-
-        
-
+        }        
         private void MainGrid_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space && !enSaut)
@@ -299,9 +280,7 @@ namespace ChatAttrapeSouris
                 FORCE_SAUT = Keyboard.IsKeyDown(Key.Space) ? SautMax : SautMin; // Saut plus haut si la touche est maintenue
                 vitesseSaut = FORCE_SAUT;
             }
-        }
-
-      
+        }   
     }
 }
 

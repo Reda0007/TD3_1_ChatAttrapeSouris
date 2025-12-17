@@ -30,19 +30,12 @@ namespace ChatAttrapeSouris
             AfficheMenu();
             InitMusique();
             InitSon();
-
         }
-
-        
-
-
         public void AfficheMenu()
         {
             UCMenu uc = new UCMenu();
             ZoneJeu.Content = uc;
             uc.ButtonMenu.Click += AfficheDebutDuJeu;
-
-
         }
 
         private void AfficheDebutDuJeu(object sender, RoutedEventArgs e)
@@ -52,7 +45,6 @@ namespace ChatAttrapeSouris
             uc.ButtonRegles.Click += AfficheRegles;
             //uc.ButtonParametres.Click += AfficheParametres;
             uc.ButtonChoixChat.Click += AfficheChoixChat;
-
         }
 
 
@@ -68,8 +60,6 @@ namespace ChatAttrapeSouris
             UCJeu uc = new UCJeu();
             ZoneJeu.Content = uc;
             uc.ButtonPause.Click += AffichePause;
-            //uc.menuParametre.Click += AfficheParametres;
-
         }
 
         private void AfficheRegles(object sender, RoutedEventArgs e)
@@ -126,7 +116,6 @@ namespace ChatAttrapeSouris
         {
             musique.Position = TimeSpan.Zero;
             musique.Play();
-
         }
 
         private void InitSon()
