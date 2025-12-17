@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="C:\Users\PC\Documents\JEUChatAttrapeSouris.cs" Link="JEUChatAttrapeSouris.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="fonds\catFond.ico" />
   </ItemGroup>
 
