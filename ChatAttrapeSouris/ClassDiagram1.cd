@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ChatAttrapeSouris.UCJeu" Collapsed="true">
-    <Position X="6" Y="2.25" Width="1.5" />
+    <Position X="6.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAgIBBQAAJAAUCYAACAAAAACAkAAAIIABAACEgCBABI=</HashCode>
       <FileName>UCJeu.xaml.cs</FileName>
@@ -17,7 +17,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ChatAttrapeSouris.UCMenu" Collapsed="true">
-    <Position X="3.75" Y="2.25" Width="1.5" />
+    <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UCMenu.xaml.cs</FileName>
@@ -25,7 +25,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ChatAttrapeSouris.Parametres" Collapsed="true">
-    <Position X="3.75" Y="3.25" Width="1.5" />
+    <Position X="2.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgAA=</HashCode>
       <FileName>Parametres.xaml.cs</FileName>
@@ -33,7 +33,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ChatAttrapeSouris.UCPause" Collapsed="true">
-    <Position X="6" Y="3.25" Width="1.5" />
+    <Position X="6.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UCPause.xaml.cs</FileName>
