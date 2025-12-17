@@ -88,12 +88,23 @@ namespace ChatAttrapeSouris
             UCPause uc = new UCPause();
             uc.ShowDialog();
         }
-        //private void AficherResultat(object sender, RoutedEventArgs e)
-        //{
-        //    UCResultat uc = new UCResultat();
-        //    ZoneJeu.Content = uc;
-        //    uc.ButtonRejouer.Click += AfficheJeu;
-        //    uc.ButtonMenu.Click += AfficheDebutDuJeu;
+        public void AfficheResultat(object sender, RoutedEventArgs e)
+        {
+            UCResultat uc = new UCResultat();
+            ZoneJeu.Content = uc;
+            uc.ButtonRejouer.Click += AfficheRejouer;
+            uc.ButtonMenuResultat.Click += AfficheMenuResultat;
+        }
+        public void AfficheMenuResultat(object sender, RoutedEventArgs e)
+        {
+            AfficheMenu();
+        }
+
+        public void AfficheRejouer(object sender, RoutedEventArgs e)
+        {
+            AfficheJeu(sender, e);
+        }
+
         private static MediaPlayer musique;
         private void InitMusique()
         {

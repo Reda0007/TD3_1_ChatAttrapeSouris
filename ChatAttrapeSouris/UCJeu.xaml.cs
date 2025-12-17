@@ -67,8 +67,8 @@ namespace ChatAttrapeSouris
             if (niveau == 0) // NIVEAU FACILE (Slider à gauche)
             {
                 vitesseDefilement = 5;  // Le décor bouge lentement
-                SautMax = 18;           // Le chat saute très haut
-                SautMin = 13;
+                SautMax = 17;           // Le chat saute très haut
+                SautMin = 12;
             }
             // changé les valeurs !!!!!!!
             else if (niveau == 1) // NIVEAU MOYEN (Slider au milieu)
@@ -195,7 +195,7 @@ namespace ChatAttrapeSouris
 
             // Retourner au menu
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-            mainWindow?.AfficheMenu();
+            mainWindow?.AfficheResultat(null, null);
         }
 
         private void Jeu(object? sender, EventArgs e)
