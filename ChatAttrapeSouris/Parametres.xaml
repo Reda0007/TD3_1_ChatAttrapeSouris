@@ -8,43 +8,43 @@
         Title="Parametres" Height="450" Width="800">
 
     <Grid x:Name="vitesse">
-            <Label x:Name="Labelson" Content="Son" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="45" Height="35" FontFamily="Algerian" FontSize="20"/>
-            <Label x:Name="Labelvitesse" Content="Vitesse" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" FontFamily="Algerian" FontSize="20" Width="85" Height="35"/>
-            <Button x:Name="buttonAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="233,341,0,0" VerticalAlignment="Top" Click="buttonAnnuler_Click" BorderBrush="Black" FontFamily="Algerian" FontSize="16" Width="90" Height="30">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFC9442D"/>
-                        <GradientStop Color="#FFB8A840" Offset="0.875"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Button x:Name="ButtonConfirmer" Content="Confirmer" HorizontalAlignment="Left" Margin="487,341,0,0" VerticalAlignment="Top" Click="ButtonConfirmer_Click" BorderBrush="Black" FontFamily="Algerian" FontSize="16" Width="100" Height="30">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF1C129"/>
-                        <GradientStop Color="#FFC9442D" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Slider x:Name="slidSon"  Width="145" Minimum="1"
+        <Label x:Name="Labelson" Content="Son" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="45" Height="35" FontFamily="Algerian" FontSize="20"/>
+        <Label x:Name="Labelvitesse" Content="Vitesse" HorizontalAlignment="Center" Margin="0,158,0,0" VerticalAlignment="Top" FontFamily="Algerian" FontSize="20" Width="84" Height="35"/>
+        <Button x:Name="buttonAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="244,275,0,0" VerticalAlignment="Top" Click="buttonAnnuler_Click" BorderBrush="Black" FontFamily="Algerian" FontSize="16" Width="90" Height="30">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC9442D"/>
+                    <GradientStop Color="#FFB8A840" Offset="0.875"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonConfirmer" Content="Confirmer" HorizontalAlignment="Left" Margin="466,275,0,0" VerticalAlignment="Top" Click="ButtonConfirmer_Click" BorderBrush="Black" FontFamily="Algerian" FontSize="16" Width="100" Height="30">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF1C129"/>
+                    <GradientStop Color="#FFC9442D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Slider x:Name="slidSon"  Width="144" Minimum="1"
              Maximum="5"
              Value="2"
              TickFrequency="1"
              IsSnapToTickEnabled="True"
              TickPlacement="BottomRight"
              AutoToolTipPlacement="BottomRight"
-             HorizontalAlignment="Center" Margin="0,90,0,305" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFF8100" Height="40"/>
+             HorizontalAlignment="Center" Margin="0,80,0,314" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFF8100" Height="40"/>
 
-            <Slider x:Name="slidVitesse"  Width="125" Minimum="1"
+        <Slider x:Name="slidVitesse"  Width="124" Minimum="1"
              Maximum="3"
              Value="2"
              TickFrequency="1"
              IsSnapToTickEnabled="True"
              TickPlacement="BottomRight"
              AutoToolTipPlacement="BottomRight"
-             HorizontalAlignment="Center" Margin="0,239,0,156" Foreground="#FF000FFF" Height="40"/>
+             HorizontalAlignment="Center" Margin="0,198,0,196" Foreground="#FF000FFF" Height="40"/>
 
 
-        </Grid>
-   
+    </Grid>
+
 </Window>
