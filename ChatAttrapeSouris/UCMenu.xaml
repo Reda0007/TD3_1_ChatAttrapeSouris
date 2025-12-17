@@ -18,10 +18,10 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <TextBlock Text="INFINITE RUNNER"
+            <TextBlock Text="CAT RUN"
                        FontSize="44" FontFamily="Algerian"
                        FontWeight="Bold" TextAlignment="Center"
-                       HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" Width="420" Height="60">
+                       HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" Width="330" Height="60">
                 <TextBlock.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF5FB6F9"/>
