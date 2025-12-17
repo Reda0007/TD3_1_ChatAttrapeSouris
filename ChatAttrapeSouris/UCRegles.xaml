@@ -7,10 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Viewbox Stretch="Uniform">
-        <Grid Width="800" Height="450">
-            <Grid.Background>
-                <ImageBrush ImageSource="/fonds/fondP.jpg"/>
-            </Grid.Background>
+        <Grid Background="Transparent" Width="800" Height="450">
 
             <TextBlock HorizontalAlignment="Left" Margin="119,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="555" FontFamily="Bahnschrift" FontSize="20" FontWeight="Bold" Background="#FFE8D161" Text="Le chat court automatiquement dès le début de la partie"/>
             <TextBlock HorizontalAlignment="Left" Margin="119,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="555" FontSize="20" Foreground="Black" FontFamily="Bahnschrift" FontWeight="Bold" Background="#FFE8D161" Text="Le joueur doit éviter les obstacles (buissons, caisses) en sautant"/>

@@ -9,13 +9,11 @@
 
     <Viewbox Stretch="Uniform">
         <Grid Width="800" Height="450">
-            <Button x:Name="ButtonQuitter" Content="QUITTER" HorizontalAlignment="Center" Margin="0,331,0,0" VerticalAlignment="Top" Width="160" Height="35" FontFamily="Algerian" FontSize="24"/>
-            <Button x:Name="ButtonRejouer" Content="Rejouer" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="34" FontFamily="Algerian" FontSize="24"/>
-            <Button x:Name="ButtonMenuResultat" Content="Menu" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="160" Height="30" FontFamily="Algerian" FontSize="22"/>
+            <Button x:Name="ButtonQuitter" Content="QUITTER" HorizontalAlignment="Center" Margin="0,331,0,0" VerticalAlignment="Top" Width="160" Height="35" FontFamily="Algerian" FontSize="24" BorderBrush="Black"/>
+            <Button x:Name="ButtonRejouer" Content="Rejouer" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="34" FontFamily="Algerian" FontSize="24" Background="#FFD7A835" BorderBrush="Black"/>
+            <Button x:Name="ButtonMenuResultat" Content="Menu" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="160" Height="30" FontFamily="Algerian" FontSize="22" Background="#FFD7A835" BorderBrush="Black"/>
             <Label x:Name="labScoreFinal" Content="SCORE : 0" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Height="39" Width="89" FontFamily="Agency FB" FontWeight="Bold" FontSize="24"/>
-            <Grid.Background>
-                <ImageBrush ImageSource="/fonds/fondP.jpg"/>
-            </Grid.Background>
+            
         </Grid>
     </Viewbox>
 </UserControl>
