@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>fonds\catFond.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +27,10 @@
     <None Remove="fonds\fondP.jpg" />
     <None Remove="IMAGES\box.png" />
     <None Remove="IMAGES\bricked_bushes.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="fonds\catFond.ico" />
   </ItemGroup>
 
   <ItemGroup>
