@@ -94,7 +94,14 @@ namespace ChatAttrapeSouris
             ZoneJeu.Content = uc;
             uc.ButtonRejouer.Click += AfficheRejouer;
             uc.ButtonMenuResultat.Click += AfficheMenuResultat;
+            uc.ButtonQuitter.Click += AfficheQuitter;
         }
+
+        private void AfficheQuitter(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
         public void AfficheMenuResultat(object sender, RoutedEventArgs e)
         {
             AfficheMenu();

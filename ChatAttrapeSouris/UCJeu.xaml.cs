@@ -36,6 +36,7 @@ namespace ChatAttrapeSouris
 
         public UCJeu()
         {
+            MainWindow.Score = 0;
             InitializeComponent();
             
             this.Loaded += (s, e) =>
@@ -190,9 +191,7 @@ namespace ChatAttrapeSouris
             MainWindow.Son.Play();
             minuterie.Stop();
             MessageBox.Show("Game Over ! Vous avez touché un obstacle.", "Fin du jeu");
-            MainWindow.Score = 0;
-
-
+            
             // Retourner au menu
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow?.AfficheResultat(null, null);
@@ -200,6 +199,8 @@ namespace ChatAttrapeSouris
 
         private void Jeu(object? sender, EventArgs e)
         {
+
+
             // Déplacement du décor
             Deplace(Fond1, (int)vitesseDefilement);
             Deplace(Fond2, (int)vitesseDefilement);
@@ -249,10 +250,10 @@ namespace ChatAttrapeSouris
             {
                 SautScore = true;
             }
-            if (Canvas.GetBottom(imgPerso) <= Canvas.GetBottom(box) && !SautScore)
-            {
-                SautScore = true;
-            }
+            //if (Canvas.GetBottom(imgPerso) <= Canvas.GetBottom(box) && !SautScore)
+            //{
+            //    SautScore = true;
+            //}
             Console.WriteLine("saut score" + SautScore);    
 
         }

@@ -23,6 +23,11 @@ namespace ChatAttrapeSouris
         public UCResultat()
         {
             InitializeComponent();
+            MettreAJourAffichage();
+        }
+        private void MettreAJourAffichage()
+        {
+            labScoreFinal.Content = "Score : " + MainWindow.Score.ToString();
         }
     }
 }
