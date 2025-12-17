@@ -242,7 +242,7 @@ namespace ChatAttrapeSouris
             Console.WriteLine("saut score" + SautScore);    
 
         }
-        // mettre a jour score
+        // mettre a jour Score
         private void MettreAJourAffichage()
         {
             labScore.Content = "Score : " + MainWindow.Score.ToString();
